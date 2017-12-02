@@ -22,13 +22,10 @@ print " ̵̧̧̢̠̗̱̗̲̝̪͇͇̐̓̓̀̀͢͞͞ͅͅǍ̜̖̼̤͔̤̝̲̗̣̽�
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage ="""_________________________________
-
-Bot Publik   ̵̧̧̢̠̗̱̗̲̝̪͇͇̐̓̓̀̀͢͞͞ͅͅǍ̜̖̼̤͔̤̝̲̗̣͍̮̽͝҉̡̡̨̧̕͢͜͠͡͡҉͞ḁ̴̸̴̡̧̢̧̜̟̥̣̩͎̼̟ͦ͗̾̿̇ͨ̍̎̉̉ͥ̋́̀͞͞͡͠͏̸̛͞͝n̦̞̭̘̯̺̗͔̲͓̖̭̤̱̖̦̑͘҉҉̛͏̡̨̛͡҉̡̡͘ ̷̗͙̫̠̹̹̙̳͚͉̦͈͖̺̤̆͑ͯ̈́͝J̞̟̫̮̜̬̘̫̗͈͚̗͔͕̻̝ͩ̋ͤͩͣ̋ͣ̐ͯ͗̈́̿̊̓͐̾͌͛ữ̴̴̸̢͈͕̙̮̭͍͔͖̪̣̘͙̬̺͐̾͒̃̀͆͐͆̀̇̕̕͘͜҉̷̴̴̛͡t̸̴̨̧̧̨̡͙͔̬̭̱̪̪͈͎̺̣̰̱̥͖̘͈̰̻̹ͦͯ̋̏͊̇̇ͩ̈́̆͊̌͋̿͟͜͟͟͜͡͡͝ȁ̷̺̭͎̙̩̝̝̻͖̮̼͍͈͈͓̻͕̻͇͍̉͒ͫͦ̃ͯ̎̃̿ͧ̈̾̊̏̄̄̍͟҉w̠̘͍̘̱͙̺͙̮̟͖̻̙̹͍̻̑̏͛̋͐̔ͥ̆ͧ̎ͪͫͨͣ͋ͦ̍̎̀ͅͅͅ͏̶̕͘͢͜҉̵̢͘҉̸͘̕͝ḁ̵̶̡̛͎͔̺̘͍ͫ̉̅̈́͑ͦ̊̚̕͏҉͢n̥̯̫̘͋̂̀́́͘҉̵̧̢͘͢͟͝͡͞
-========Menu Bot=========
-
+helpMessage ="""
+_________Daftar Command____________
 ☞ Apakah (seperti kerang ajaib)
-☞ kedapkedip = coba aja
+☞ kedapkedip (text)
 ☞ Dosa @(by tag) = Buat lucu2an
 ☞ Pahala @(by tag) = Buat lucu2an
 ☞ Steal dp @(by tag) = meliahat dp
@@ -48,37 +45,35 @@ Bot Publik   ̵̧̧̢̠̗̱̗̲̝̪͇͇̐̓̓̀̀͢͞͞ͅͅǍ̜̖̼̤͔̤̝̲̽
 ☞ /help = Menampilkan keyword
 ☞ /keluar = Bot meninggalkan grup
 ☞ /musik <penyanyi> <judul>
-☞ Instagram contoh Instagram sesadas.class
+☞ Instagram (username)
 ☞ youtube [name vidio]
-☞ /image contoh /image kucing
+☞ /image (text)
 ☞ Crash
-☞ Wiki contoh Wiki kucing
+☞ Wiki (text)
 ☞ Creator
-
-==========BotCreator==========
-
-A̩̥͎̫ͪ̕͜ͅa̟̙̦̘̺̍ͤͦ͌̅ͮn̻͕̳͎̾͋̄ͥ̊̾ͭ̓̓҉̶́͜͜ ̴̸͈̫̯̲̹̤̾̐ͨͦͤͦͅ͏j̷̶̢̱̱̱̪̬̱̊ͧ̎̆̈́͘͝u̟̬͈̪͈͖̘͓̿ͬͪ̂́̕͜͡͠ͅt̴̴̛̤ͧͩͮ̄͒̔̑̀͟͏̶ȧ̴̴̢̨̳̼̬̯̼̘͖̒ͧ̓̄͗͊́͝w̸̢̦̹̺͈̾͆ͣ́̔́̚͢͠ą̵̴̸̻͙ͯ̎͊̒̅̓͜n̸͍͇̙͔̼̗͑̎͊ͣ̅̅͆̑̕͢
-==>Aan jutawan: https://line.me/R/ti/p/%40iyv1920f<==
-_________________________________
+____________A.K.E.D_______________
 """
 
 
 KAC=[cl]
 mid = cl.getProfile().mid
 
-Bots=[mid,"ub76a0153a283da9a1443dfb043181335"]
-admin=["ub76a0153a283da9a1443dfb043181335"]
+Bots=[mid,"ube187443474747c3ec352e7efeb48c1b"]
+admin=["ube187443474747c3ec352e7efeb48c1b"]
+owner = ["ube187443474747c3ec352e7efeb48c1b"]
+creator = ["ube187443474747c3ec352e7efeb48c1b"]
+Creator = ["ube187443474747c3ec352e7efeb48c1b"]
 wait = {
     'contact':False,
     'autoJoin':True,
     'autoCancel':{"on":False,"members":1},
     'leaveRoom':True,
     'timeline':False,
-    'autoAdd':True,
-    'message':"Support Bot Aan jutawan https://line.me/R/ti/p/%40iyv1920f",
+    'autoAdd':False,
+    'message':"Terima Kasih Sudah Add, Jangan Lupa Like TL:)",
     "lang":"JP",
-    "comment":"Thanks for add Open selfbot,Sewa Bot Protect,Jual Script Bot Minat pc https:/line.me/R/ti/p/%40iyv1920f",
-    "commentOn":False,
+    "comment":"Terima Kasih Sudah Add, Jangan Lupa Like TL:)",
+    "commentOn":True,
     "commentBlack":{},
     "wblack":False,
     "dblack":False,
@@ -184,7 +179,7 @@ def autolike():
         if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
           try:    
             cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-	    cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"AutoLike by Aan jutawan\n\ninstagram.com/alrahmanto_selebgram")
+	    cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Sudah Aku Like, Like Backnya Mana")
             print "Like"
           except:
             pass
@@ -1036,7 +1031,7 @@ def bot(op):
                 cl.sendMessage(msg)
             elif 'Crash' in msg.text:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': "ub76a0153a283da9a1443dfb043181335"}
+                msg.contentMetadata = {'mid': "ube187443474747c3ec352e7efeb48c1b"}
                 cl.sendMessage(msg)
             elif "Steal mid @" in msg.text:
               if msg.toType == 2:
@@ -2631,7 +2626,7 @@ def bot(op):
                 kk.sendText(msg.to,"Hinata pekok 􀜁􀅔Har Har􏿿")
                 kc.sendText(msg.to,"Hinata pekok 􀜁􀅔Har Har􏿿")
             elif msg.text in ["/creator"]:
-                cl.sendText(msg.to,"==========BotCreator==========\n\nĜ̵͑̎I̸̛̽̕A̴̿̀͠N̷̋̿͝Ȁ̵̔̀N̷̋̿͝D̴́͗͘Ȁ̵̔̀\n==>'Instagram.com/gianandaal'<==\n\nWajib follow􀜁􀅔Har Har􏿿")
+                cl.sendText(msg.to,"==========BotCreator==========\n\nDeka\n==>'Instagram.com/dekaprabowoo'<==\n\nWajib follow􀜁􀅔Har Har􏿿")
 
             elif msg.text in ["bobo ah","Bobo dulu ah"]:
                 cl.sendText(msg.to,"Have a nice dream  􀜁􀅔Har Har􏿿")
