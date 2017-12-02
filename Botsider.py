@@ -172,41 +172,6 @@ def NOTIFIED_READ_MESSAGE(op):
     except:
         pass
 
-#---------------------------[AutoLike-nya]---------------------------#
-def autolike():
-     for zx in range(0,100):
-        hasil = cl.activity(limit=100)
-        if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
-          try:    
-            cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-	    cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Sudah Aku Like, Like Backnya Mana")
-            print "Like"
-          except:
-            pass
-        else:
-            print "Already Liked"
-     time.sleep(500)
-thread2 = threading.Thread(target=autolike)
-thread2.daemon = True
-thread2.start()
-#---------------------------[AutoLike-nya]---------------------------#
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#-------------------
-
 def bot(op):
     try:
         if op.type == 0:
