@@ -9,11 +9,11 @@ from gtts import gTTS
 
 
 #kk = Aan.LINE()
-#kk.login(qr=True)
+#kk.login(token="En9F8NgFpnCwt5FRGu3d.UvZQ8iaX1kDhGbAShThZ3q.BPHNVeQNnfow7SZ1SGynNg7eghAGXSqFPNpcJBcd3LI=")
 #kk.loginResult()
 
 cl = Aan.LINE()
-cl.login(token="EnfwKuIPDI6HGMcj4uEd.3OW3EdxawiI/Y43HJmwQlq.DSetcQiZ6kWrO0oKJhdcROL1Wkz0rzPZvqJCBTNTAtg=")
+cl.login(token="En9F8NgFpnCwt5FRGu3d.UvZQ8iaX1kDhGbAShThZ3q.BPHNVeQNnfow7SZ1SGynNg7eghAGXSqFPNpcJBcd3LI=")
 cl.loginResult()
 
 cl
