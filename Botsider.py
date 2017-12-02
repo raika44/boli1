@@ -2002,7 +2002,7 @@ def bot(op):
             elif msg.text in ["Creator"]:
               if msg.toType == 2:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': 'u84e571575c1f7fe8bda071470a4511a0'}
+                msg.contentMetadata = {'mid': 'ube187443474747c3ec352e7efeb48c1b'}
                 cl.sendMessage(msg)
                 cl.sendText(msg.to,"Itu Creator Saya ")
 	    elif msg.text in ["/gcreator"]:
@@ -2186,7 +2186,7 @@ def bot(op):
                 tanya = msg.text.replace("Dosa @","")
                 jawab = ("60%","70%","80%","90%","100%","Tak terhingga")
                 jawaban = random.choice(jawab)
-                cl.sendText(msg.to,"Dosanya " + tanya + "adalah " + jawaban + " Banyak banyak tobat Nak ")
+                cl.sendText(msg.to,"Dosanya " + tanya + "adalah " + jawaban + " tobat Nak ")
 #----------------------
 	    elif "Pahala @" in msg.text:
                 tanya = msg.text.replace("Pahala @","")
@@ -2239,7 +2239,7 @@ def bot(op):
 			    for rom in wait2["ROM"][msg.to].items():
  				print rom
 				chiya += rom[1] + "\n"
- 			cl.sendText(msg.to, "Pembaca:\n_________________________________%s\n\nSidernya:\n_________________________________\n%s\n\n_________________________________\nIn the last seen point:\n[%s]\n_________________________________" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+ 			cl.sendText(msg.to, "[Pembaca:]\n_________________________________%s\n\n[Sidernya:]\n_________________________________\n%s\n\n_________________________________\nJam Sekarang:\n[%s]\n_________________________________" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
 			print "\nReading Point Set..."
 			try:
 			    del wait2['readPoint'][msg.to]
@@ -2581,8 +2581,8 @@ def bot(op):
 
             elif msg.text in ["hi"]:
                 cl.sendText(msg.to,"Hi 􀜁􀅔Har Har􏿿")
-                cl.sendText(msg.to,"follow IG saya 􀜁􀅔Har Har􏿿")
-                cl.sendText(msg.to,"instagram.com/gianandaal 􀜁􀅔Har Har􏿿")
+                cl.sendText(msg.to,"follow IG creator saya 􀜁􀅔Har Har􏿿")
+                cl.sendText(msg.to,"instagram.com/dekaprabowoo 􀜁􀅔Har Har􏿿")
 
 #-----------------------------------------------
 
@@ -2621,7 +2621,7 @@ def bot(op):
       #-------------Fungsi Respon Finish---------------------#
 
       #-------------Fungsi Balesan Respon Start---------------------#
-            elif msg.text in ["Ini Apa","ini apa","Apaan Ini","apaan ini"]:
+            elif msg.text in ["Ini Apa","ini apa","Apaan Ini","apaan ini","bot"]:
                 cl.sendText(msg.to,"Ya gitu deh intinya 􀨁􀅴questioning􏿿")
 
       #-------------Fungsi Balesan Respon Finish---------------------#
