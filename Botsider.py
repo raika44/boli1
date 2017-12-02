@@ -23,7 +23,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 helpMessage ="""
-_________Daftar Command____________
+____________A.K.E.D_____________
 ☞ Apakah (seperti kerang ajaib)
 ☞ kedapkedip (text)
 ☞ Dosa @(by tag) = Buat lucu2an
@@ -51,7 +51,7 @@ _________Daftar Command____________
 ☞ Crash
 ☞ Wiki (text)
 ☞ Creator
-____________A.K.E.D_______________
+____________A.K.E.D_____________
 """
 
 
