@@ -4,8 +4,13 @@ import Aan
 from Aan.lib.curve.ttypes import *
 from datetime import datetime
 from bs4 import BeautifulSoup
-import time,random,sys,re,os,json,subprocess,threading,string,codecs,requests,tweepy,ctypes,urllib,urllib2,wikipedia,tempfile,glob,shutil,unicodedata,goslate
-from gtts import gTTS
+import time, random, sys, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
+import requests
+from urllib import urlopen
+import urllib2
+import urllib3
+import tempfile
+import html5lib
 
 
 #kk = Aan.LINE()
@@ -42,7 +47,6 @@ ____________A.K.E.D_____________
 ☞ /cancel = Membatalkan semua undanganan
 ☞ /ourl = Invite by link on
 ☞ /curl = Invite by link off
-☞ /help = Menampilkan keyword
 ☞ /keluar = Bot meninggalkan grup
 ☞ /musik <penyanyi> <judul>
 ☞ Instagram (username)
