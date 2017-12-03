@@ -103,6 +103,23 @@ setTime = {}
 setTime = wait2['setTime']
 
 
+def yt(query):
+    with requests.session() as s:
+         isi = []
+         if query == "":
+             query = "S1B tanysyz"   
+         s.headers['user-agent'] = 'Mozilla/5.0'
+         url    = 'http://www.youtube.com/results'
+         params = {'search_query': query}
+         r    = s.get(url, params=params)
+         soup = BeautifulSoup(r.content, 'html5lib')
+         for a in soup.select('.yt-lockup-title > a[title]'):
+            if '&list=' not in a['href']:
+                if 'watch?v' in a['href']:
+                    b = a['href'].replace('watch?v=', '')
+                    isi += ['youtu.be' + b]
+         return isi
+
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
     mes.to, mes.from_ = to, profile.mid
