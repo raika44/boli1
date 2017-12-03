@@ -4,8 +4,10 @@ import Aan
 from Aan.lib.curve.ttypes import *
 from datetime import datetime
 from bs4 import BeautifulSoup
-import time, random, sys, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
+import time, random, sys, re, os, json, subprocess, threading, glob, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
 import requests
+from gtts import gTTS
+import goslate
 from urllib import urlopen
 import urllib2
 import urllib3
