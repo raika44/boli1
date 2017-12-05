@@ -99,6 +99,13 @@ wait2 = {
     'ROM':{}
     }
 
+mimic = {
+    "copy":False,
+    "copy2":False,
+    "status":False,
+    "target":{}
+    }
+
 setTime = {}
 setTime = wait2['setTime']
 
@@ -194,6 +201,15 @@ def NOTIFIED_READ_MESSAGE(op):
             pass
     except:
         pass
+
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+
+def waktu(secs):
+    mins, secs = divmod(secs,60)
+    hours, mins = divmod(mins,60)
+    return '%02d Jam %02d Menit %02d Detik' % (hours, mins, secs)
 
 def bot(op):
     try:
@@ -1988,6 +2004,55 @@ def bot(op):
                     kc.sendText(msg.to,"Jam Sedang Off")
          #-------------Fungsi Jam on/off Finish-------------------#           
          
+#----------------------------------------------------------------------------
+            elif msg.text.lower() == 'Runtime':
+                eltime = time.time() - mulai
+                van = " Sudah Berjalan Selama "+waktu(eltime)
+                cl.sendText(msg.to,van)
+                
+            elif msg.text is None:
+                return
+#---------------------------------------------------------
+            elif "/cek " in msg.text:
+                tanggal = msg.text.replace("/cek ","")
+                r=requests.get('https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=ervan&tanggal='+tanggal)
+                data=r.text
+                data=json.loads(data)
+                lahir = data["data"]["lahir"]
+                usia = data["data"]["usia"]
+                ultah = data["data"]["ultah"]
+                zodiak = data["data"]["zodiak"]
+                ki.sendText(msg.to," Lahir : "+lahir+"\n\nUmur : "+usia+"\n\nUltah : "+ultah+"\n\nZodiak : "+zodiak)
+#--------------------------------- mimic ------------------------------------
+
+#----------------------------------------------------------------------------
+            elif msg.text in ["/quote"]:
+                quote = ["Barangsiapa yang suka meninggalkan barang di tempat umum maka ia akan kehilangan barangnya tersebut","Kunci KESUKSESAN itu cuma satu, yakni lu harus BERHASIL"]
+                rio = random.choice(quote)
+                kc.sendText(msg.to,rio)
+#---------------------------------------------------------
+#---------------------------------------------------------
+            elif msg.text in ["/time","/waktu"]:
+                timeNow = datetime.now()
+                timeHours = datetime.strftime(timeNow,"(%H:%M)")
+                day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
+                hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
+                bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                inihari = datetime.today()
+                hr = inihari.strftime('%A')
+                bln = inihari.strftime('%m')
+                for i in range(len(day)):
+                    if hr == day[i]: hasil = hari[i]
+                for k in range(0, len(bulan)):
+                    if bln == str(k): blan = bulan[k-1]
+                rst = hasil + ", " + inihari.strftime('%d') + " - " + blan + " - " + inihari.strftime('%Y') + "\nJam : [ " + inihari.strftime('%H:%M:%S') + " ]"
+                ki.sendText(msg.to, rst)
+#---------------------------------------------------------
+#---------------------------------------------------------
+            elif msg.text in ["/kalender"]:
+	    	    wait2['setTime'][msg.to] = datetime.today().strftime('TANGGAL : %Y-%m-%d \nHARI : %A \nJAM : %H:%M:%S')
+	            ki.sendText(msg.to, "KALENDER\n\n" + (wait2['setTime'][msg.to]))
+#---------------------------------------------------------    
          #-------------Fungsi Change Clock Start------------------#
             elif msg.text in ["Change clock"]:
                 n = msg.text.replace("Change clock","")
