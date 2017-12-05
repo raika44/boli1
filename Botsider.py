@@ -2183,10 +2183,6 @@ def bot(op):
             elif "Ar:off" in msg.text:
                 wait["detectMention"] = False
                 cl.sendText(msg.to,"Auto Respon inActive")                
-            elif msg.text in ["rentus"]:
-                md = ""
-                if wait["detectMention"] == True: md+="✦ Auto respon : on\n"
-                else: md +="✦ Auto respond : off\n
 ##============Auto respond=================
 #--------------------#
 
