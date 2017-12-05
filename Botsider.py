@@ -842,19 +842,27 @@ def bot(op):
 		return
 
         if op.type == 26:
-	    msg = op.message
-
-	    if 'MENTION' in mid:
-    		cl.sendText(msg.to, '===AUTO_RESPON===\nCie ngetag bot')
-	    else:
-      		pass
+            msg = op.message
+            if 'MENTION' in msg.contentMetadata.keys() != None:
+              if wait ["detectMention"] == True:
+                    contact = cl.getContact(msg.from_)
+                    cName = contact.displayName
+                    balas = ["apa sayang",cName + " ngapain ngetag?",cName + " nggk ush tag.klo pnting pc aja","tertag-_-","iya kenapa sayang"]
+                    ret_ = "[Respon] " + random.choice(balas)
+                    name = re.findall(r'@(\w+)', msg.text)
+                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                    mentionees = mention['MENTIONEES']
+                    for mention in mentionees:
+                           if mention['M'] in Bots:
+                                  cl.sendText(msg.to,ret_)
+                                  break
             if msg.toType == 1:
                 if wait["leaveRoom"] == True:
                     cl.leaveRoom(msg.to)
             if msg.contentType == 16:
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
-        if op.type == 26:
+        if op.type == 26 or op.type == 25:
             msg = op.message
             if msg.contentType == 13:
                if wait["wblack"] == True:
@@ -1716,7 +1724,7 @@ def bot(op):
                         cl.sendText(msg.to,"done")
                     else:
                         cl.sendText(msg.to,"è¦�äº†å…³æ–­ã€‚")
-            elif msg.text in ["Set View"]:
+            elif msg.text in ["Ini Setting"]:
                 md = ""
                 if wait["Protectjoin"] == True: md+="􀔃􀆑lock􏿿  Block Join\n"
                 else: md+=" Block Join Off\n"
@@ -1988,8 +1996,20 @@ def bot(op):
                 else:
                     wait["cName"] = n
                     cl.sendText(msg.to,"changed to\n\n" + n)
-         #-------------Fungsi Change Clock Finish-----------------#
-
+         #-------------Fungsi Change Clock Finish-----------------
+##============Auto respond=================
+            elif "Ar:on" in msg.text:
+                wait["detectMention"] = True
+                cl.sendText(msg.to,"Auto Respon Active")
+                
+            elif "Ar:off" in msg.text:
+                wait["detectMention"] = False
+                cl.sendText(msg.to,"Auto Respon inActive")                
+            elif msg.text in ["rentus"]:
+                md = ""
+                if wait["detectMention"] == True: md+="✦ Auto respon : on\n"
+                else: md +="✦ Auto respond : off\n
+##============Auto respond=================
 #--------------------#
 
 	    elif "/lirik " in msg.text.lower():
