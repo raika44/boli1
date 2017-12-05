@@ -2023,8 +2023,121 @@ def bot(op):
                 ultah = data["data"]["ultah"]
                 zodiak = data["data"]["zodiak"]
                 ki.sendText(msg.to," Lahir : "+lahir+"\n\nUmur : "+usia+"\n\nUltah : "+ultah+"\n\nZodiak : "+zodiak)
-#--------------------------------- mimic ------------------------------------
-
+#--------------------------------- Mimic --------------------------------
+            elif msg.from_ in mimic["target"] and mimic["status"] == True and mimic["target"][msg.from_] == True:
+            	text = msg.text
+            	if text is not None:
+            		cl.sendText(msg.to,text)
+            		ki.sendText(msg.to,text)
+            		kk.sendText(msg.to,text)
+            	else:
+            		if msg.contentType == 7:
+            			msg.contentType = 7
+            			msg.text = None
+            			msg.contentMetadata = {
+            							 	 "STKID": "6",
+            							 	 "STKPKGID": "1",
+            							 	 "STKVER": "100" }
+            			cl.sendMessage(msg)
+            			ki.sendMessage(msg)
+            			kk.sendMessage(msg)
+            		elif msg.contentType == 13:
+            			msg.contentType = 13
+            			msg.contentMetadata = {'mid': msg.contentMetadata["mid"]}
+            			cl.sendMessage(msg)
+            			ki.sendMessage(msg)
+            			kk.sendMessage(msg)
+            elif "Mimic:" in msg.text:
+            	if msg.from_ in admin:
+            		cmd = msg.text.replace("Mimic:","")
+            		if cmd == "on":
+            			if mimic["status"] == False:
+            				mimic["status"] = True
+            				ki.sendText(msg.to,"Mimic on")
+            				kk.sendText(msg.to,"Mimic Aktif")
+            			else:
+            				ki.sendText(msg.to,"Mimic already on")
+            				kk.sendText(msg.to,"Mimic Sudah On")
+            		elif cmd == "off":
+            			if mimic["status"] == True:
+            				mimic["status"] = False
+            				ki.sendText(msg.to,"Mimic off")
+            				kk.sendText(msg.to,"Mimic Mati")
+            			else:
+            				ki.sendText(msg.to,"Mimic already off")
+            				kk.sendText(msg.to,"Mimic Telah Mati")
+            		elif "add:" in cmd:
+            			target0 = msg.text.replace("Mimic:add:","")
+            			target1 = target0.lstrip()
+            			target2 = target1.replace("@","")
+            			target3 = target2.rstrip()
+            			_name = target3
+            			gInfo = cl.getGroup(msg.to)
+            			gInfo = ki.getGroup(msg.to)
+            			gInfo = kk.getGroup(msg.to)
+            			targets = []
+            			for a in gInfo.members:
+            				if _name == a.displayName:
+            					targets.append(a.mid)
+            			if targets == []:
+            				ki.sendText(msg.to,"No targets")
+            				kk.sendText(msg.to,"Tidak Ada Target")
+            			else:
+            				for target in targets:
+            					try:
+            						mimic["target"][target] = True
+            						ki.sendText(msg.to,"Success added target")
+            						kk.sendText(msg.to,"Berhasil Menambahkan Target")
+            						#cl.sendMessageWithMention(msg.to,target)
+            						break
+            					except:
+            						ki.sendText(msg.to,"Failed")
+            						kk.sendText(msg.to,"Gagal")
+            						break
+            		elif "del:" in cmd:
+            			target0 = msg.text.replace("Mimic:del:","")
+            			target1 = target0.lstrip()
+            			target2 = target1.replace("@","")
+            			target3 = target2.rstrip()
+            			_name = target3
+            			gInfo = cl.getGroup(msg.to)
+            			gInfo = ki.getGroup(msg.to)
+            			gInfo = kk.getGroup(msg.to)
+            			targets = []
+            			for a in gInfo.members:
+            				if _name == a.displayName:
+            					targets.append(a.mid)
+            			if targets == []:
+            				ki.sendText(msg.to,"No targets")
+            				kk.sendText(msg.to,"Tidak Ada Target")
+            			else:
+            				for target in targets:
+            					try:
+            						del mimic["target"][target]
+            						ki.sendText(msg.to,"Success deleted target")
+            						kk.sendText(msg.to,"Berhasil Menambahkan Target")
+            						#cl.sendMessageWithMention(msg.to,target)
+            						break
+            					except:
+            						ki.sendText(msg.to,"Failed!")
+            						kk.sendText(msg.to,"Gagal")
+            						break
+            		elif cmd == "ListTarget":
+            			if mimic["target"] == {}:
+            				cl.sendText(msg.to,"No target")
+            				ki.sendText(msg.to,"No target")
+            				kk.sendText(msg.to,"Tidak Ada Target")
+                    	else:
+                    		lst = "<<Lit Target>>"
+                    		total = len(mimic["target"])
+                    		for a in mimic["target"]:
+                				if mimic["target"][a] == True:
+                					stat = "On"
+                				else:
+                					stat = "Off"
+                				lst += "\n->" + cl.getContact(mi_d).displayName + ki.getContact(mi_d).displayName +" | " + stat
+                                cl.sendText(msg.to,lst + "\nTotal:" + total)
+                                ki.sendText(msg.to,lst + "\nTotal:" + total)
 #----------------------------------------------------------------------------
             elif msg.text in ["/quote"]:
                 quote = ["Barangsiapa yang suka meninggalkan barang di tempat umum maka ia akan kehilangan barangnya tersebut","Kunci KESUKSESAN itu cuma satu, yakni lu harus BERHASIL"]
