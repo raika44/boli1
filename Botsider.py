@@ -820,7 +820,7 @@ def bot(op):
                 cl.leaveRoom(op.param1)
 
 
-	if op.type == 26:
+	if op.type == 26 or op.type == 25:
             msg = op.message
             try:
 		if msg.contentType == 0:
