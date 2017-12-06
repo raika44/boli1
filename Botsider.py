@@ -1983,7 +1983,31 @@ def bot(op):
                     for mi_d in wait["commentBlack"]:
                         mc += "" +cl.getContact(mi_d).displayName + "\n"
                     cl.sendText(msg.to,mc)
-                    
+
+             elif msg.text in ["Tag:on"]:
+                if wait["tag"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Already on")
+                    else:
+                        cl.sendText(msg.to,"Tag On")
+                else:
+                    wait["tag"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Tag On")
+                    else:
+                        cl.sendText(msg.to,"already on")
+            elif msg.text in ["Tag:off"]:
+                if wait["tag"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Already off")
+                    else:
+                        cl.sendText(msg.to,"Tag Off")
+                else:
+                    wait["tag"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Tag Off")
+                    else:
+                        cl.sendText(msg.to,"Already off")
         #-------------Fungsi Jam on/off Start-------------------#            
             elif msg.text in ["Jam on"]:
                 if wait["clock"] == True:
@@ -2009,32 +2033,6 @@ def bot(op):
                     jawab = (cl.getProfile().displayName+" sedang sibuk/Off\nJika penting silakan Pesonal chat\n#Respon")
                     jawaban = (jawab)
                     cl.sendText(msg.to,jawaban)
-
-             elif msg.text in ["Tag on"]:
-                if wait["tag"] == True:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Already on")
-                    else:
-                        cl.sendText(msg.to,"Tag On")
-                else:
-                    wait["tag"] = True
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Tag On")
-                    else:
-                        cl.sendText(msg.to,"already on")
-            elif msg.text in ["Tag off"]:
-                if wait["tag"] == False:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Already off")
-                    else:
-                        cl.sendText(msg.to,"Tag Off")
-                else:
-                    wait["tag"] = False
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Tag Off")
-                    else:
-                        cl.sendText(msg.to,"Already off")
-         
 #----------------------------------------------------------------------------
             elif msg.text.lower() == 'berjalan':
                 eltime = time.time() - mulai
