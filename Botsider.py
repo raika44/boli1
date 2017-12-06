@@ -2002,14 +2002,24 @@ def bot(op):
                 else:
                     wait["clock"] = False
                     kc.sendText(msg.to,"Jam Sedang Off")
-         #-------------Fungsi Jam on/off Finish-------------------#           
+         #-------------Fungsi Jam on/off Finish-------------------#  
+           elif "@Kevin" in msg.text:
+                tanya = msg.text.replace("@Kevin ","")
+                jawab = ("Apa Sayang","Astaga Di Bilang Apa","Iya Aku Sayang","Be Mine?")
+                jawaban = random.choice(jawab)
+                cl.sendText(msg.to,jawaban)        
+
+           elif "@kevin" in msg.text:
+                tanya = msg.text.replace("@kevin ","")
+                jawab = ("apaaa","kenapaaaa","astagaaaa","bah")
+                jawaban = random.choice(jawab)
+                cl.sendText(msg.to,jawaban)
          
 #----------------------------------------------------------------------------
-            elif msg.text.lower() == 'Runtime':
+            elif msg.text.lower() == 'berjalan':
                 eltime = time.time() - mulai
                 van = " Sudah Berjalan Selama "+waktu(eltime)
                 cl.sendText(msg.to,van)
-                
             elif msg.text is None:
                 return
 #---------------------------------------------------------
@@ -2022,14 +2032,12 @@ def bot(op):
                 usia = data["data"]["usia"]
                 ultah = data["data"]["ultah"]
                 zodiak = data["data"]["zodiak"]
-                ki.sendText(msg.to," Lahir : "+lahir+"\n\nUmur : "+usia+"\n\nUltah : "+ultah+"\n\nZodiak : "+zodiak)
+                cl.sendText(msg.to," Lahir : "+lahir+"\n\nUmur : "+usia+"\n\nUltah : "+ultah+"\n\nZodiak : "+zodiak)
 #--------------------------------- Mimic --------------------------------
             elif msg.from_ in mimic["target"] and mimic["status"] == True and mimic["target"][msg.from_] == True:
             	text = msg.text
             	if text is not None:
             		cl.sendText(msg.to,text)
-            		ki.sendText(msg.to,text)
-            		kk.sendText(msg.to,text)
             	else:
             		if msg.contentType == 7:
             			msg.contentType = 7
@@ -2039,33 +2047,25 @@ def bot(op):
             							 	 "STKPKGID": "1",
             							 	 "STKVER": "100" }
             			cl.sendMessage(msg)
-            			ki.sendMessage(msg)
-            			kk.sendMessage(msg)
             		elif msg.contentType == 13:
             			msg.contentType = 13
             			msg.contentMetadata = {'mid': msg.contentMetadata["mid"]}
             			cl.sendMessage(msg)
-            			ki.sendMessage(msg)
-            			kk.sendMessage(msg)
             elif "Mimic:" in msg.text:
             	if msg.from_ in admin:
             		cmd = msg.text.replace("Mimic:","")
             		if cmd == "on":
             			if mimic["status"] == False:
             				mimic["status"] = True
-            				ki.sendText(msg.to,"Mimic on")
-            				kk.sendText(msg.to,"Mimic Aktif")
+            				cl.sendText(msg.to,"Mimic on")
             			else:
-            				ki.sendText(msg.to,"Mimic already on")
-            				kk.sendText(msg.to,"Mimic Sudah On")
+            				cl.sendText(msg.to,"Mimic already on")
             		elif cmd == "off":
             			if mimic["status"] == True:
             				mimic["status"] = False
-            				ki.sendText(msg.to,"Mimic off")
-            				kk.sendText(msg.to,"Mimic Mati")
+            				cl.sendText(msg.to,"Mimic off")
             			else:
-            				ki.sendText(msg.to,"Mimic already off")
-            				kk.sendText(msg.to,"Mimic Telah Mati")
+            				cl.sendText(msg.to,"Mimic already off")
             		elif "add:" in cmd:
             			target0 = msg.text.replace("Mimic:add:","")
             			target1 = target0.lstrip()
@@ -2073,26 +2073,21 @@ def bot(op):
             			target3 = target2.rstrip()
             			_name = target3
             			gInfo = cl.getGroup(msg.to)
-            			gInfo = ki.getGroup(msg.to)
-            			gInfo = kk.getGroup(msg.to)
             			targets = []
             			for a in gInfo.members:
             				if _name == a.displayName:
             					targets.append(a.mid)
             			if targets == []:
-            				ki.sendText(msg.to,"No targets")
-            				kk.sendText(msg.to,"Tidak Ada Target")
+            				cl.sendText(msg.to,"No targets")
             			else:
             				for target in targets:
             					try:
             						mimic["target"][target] = True
-            						ki.sendText(msg.to,"Success added target")
-            						kk.sendText(msg.to,"Berhasil Menambahkan Target")
+            						cl.sendText(msg.to,"Success added target")
             						#cl.sendMessageWithMention(msg.to,target)
             						break
             					except:
-            						ki.sendText(msg.to,"Failed")
-            						kk.sendText(msg.to,"Gagal")
+            						cl.sendText(msg.to,"Failed")
             						break
             		elif "del:" in cmd:
             			target0 = msg.text.replace("Mimic:del:","")
@@ -2101,32 +2096,25 @@ def bot(op):
             			target3 = target2.rstrip()
             			_name = target3
             			gInfo = cl.getGroup(msg.to)
-            			gInfo = ki.getGroup(msg.to)
-            			gInfo = kk.getGroup(msg.to)
             			targets = []
             			for a in gInfo.members:
             				if _name == a.displayName:
             					targets.append(a.mid)
             			if targets == []:
-            				ki.sendText(msg.to,"No targets")
-            				kk.sendText(msg.to,"Tidak Ada Target")
+            				cl.sendText(msg.to,"No targets")
             			else:
             				for target in targets:
             					try:
             						del mimic["target"][target]
-            						ki.sendText(msg.to,"Success deleted target")
-            						kk.sendText(msg.to,"Berhasil Menambahkan Target")
+            						cl.sendText(msg.to,"Success deleted target")
             						#cl.sendMessageWithMention(msg.to,target)
             						break
             					except:
-            						ki.sendText(msg.to,"Failed!")
-            						kk.sendText(msg.to,"Gagal")
+            						cl.sendText(msg.to,"Failed!")
             						break
             		elif cmd == "ListTarget":
             			if mimic["target"] == {}:
             				cl.sendText(msg.to,"No target")
-            				ki.sendText(msg.to,"No target")
-            				kk.sendText(msg.to,"Tidak Ada Target")
                     	else:
                     		lst = "<<Lit Target>>"
                     		total = len(mimic["target"])
@@ -2135,14 +2123,13 @@ def bot(op):
                 					stat = "On"
                 				else:
                 					stat = "Off"
-                				lst += "\n->" + cl.getContact(mi_d).displayName + ki.getContact(mi_d).displayName +" | " + stat
+                				lst += "\n->" + cl.getContact(mi_d).displayName + " | " + stat
                                 cl.sendText(msg.to,lst + "\nTotal:" + total)
-                                ki.sendText(msg.to,lst + "\nTotal:" + total)
 #----------------------------------------------------------------------------
             elif msg.text in ["/quote"]:
-                quote = ["Barangsiapa yang suka meninggalkan barang di tempat umum maka ia akan kehilangan barangnya tersebut","Kunci KESUKSESAN itu cuma satu, yakni lu harus BERHASIL"]
+                quote = ['Barangsiapa yang suka meninggalkan barang di tempat umum maka ia akan kehilangan barangnya tersebut','Kunci KESUKSESAN itu cuma satu, yakni lu harus BERHASIL']
                 rio = random.choice(quote)
-                kc.sendText(msg.to,rio)
+                cl.sendText(msg.to,rio)
 #---------------------------------------------------------
 #---------------------------------------------------------
             elif msg.text in ["/time","/waktu"]:
@@ -2159,12 +2146,12 @@ def bot(op):
                 for k in range(0, len(bulan)):
                     if bln == str(k): blan = bulan[k-1]
                 rst = hasil + ", " + inihari.strftime('%d') + " - " + blan + " - " + inihari.strftime('%Y') + "\nJam : [ " + inihari.strftime('%H:%M:%S') + " ]"
-                ki.sendText(msg.to, rst)
+                cl.sendText(msg.to, rst)
 #---------------------------------------------------------
 #---------------------------------------------------------
             elif msg.text in ["/kalender"]:
 	    	    wait2['setTime'][msg.to] = datetime.today().strftime('TANGGAL : %Y-%m-%d \nHARI : %A \nJAM : %H:%M:%S')
-	            ki.sendText(msg.to, "KALENDER\n\n" + (wait2['setTime'][msg.to]))
+	            cl.sendText(msg.to, "KALENDER\n\n" + (wait2['setTime'][msg.to]))
 #---------------------------------------------------------    
          #-------------Fungsi Change Clock Start------------------#
             elif msg.text in ["Change clock"]:
