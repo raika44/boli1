@@ -2003,11 +2003,37 @@ def bot(op):
                     wait["clock"] = False
                     kc.sendText(msg.to,"Jam Sedang Off")
          #-------------Fungsi Jam on/off Finish-------------------#  
-           elif "@ " in msg.text:
-                tanya = msg.text.replace("@ ","")
-                jawab = ("Apa Sayang","Astaga Di Bilang Apa","Iya Aku Sayang","Be Mine?")
-                jawaban = random.choice(jawab)
-                cl.sendText(msg.to,jawaban)        
+            if "@"+cl.getProfile().displayName in msg.text:
+                if wait["tag"] == True:
+                    tanya = msg.text.replace("@"+cl.getProfile().displayName,"")
+                    jawab = (cl.getProfile().displayName+" sedang sibuk/Off\nJika penting silakan Pesonal chat\n#Respon")
+                    jawaban = (jawab)
+                    cl.sendText(msg.to,jawaban)
+
+             elif msg.text in ["Tag on"]:
+                if wait["tag"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Already on")
+                    else:
+                        cl.sendText(msg.to,"Tag On")
+                else:
+                    wait["tag"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Tag On")
+                    else:
+                        cl.sendText(msg.to,"already on")
+            elif msg.text in ["Tag off"]:
+                if wait["tag"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Already off")
+                    else:
+                        cl.sendText(msg.to,"Tag Off")
+                else:
+                    wait["tag"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Tag Off")
+                    else:
+                        cl.sendText(msg.to,"Already off")
          
 #----------------------------------------------------------------------------
             elif msg.text.lower() == 'berjalan':
