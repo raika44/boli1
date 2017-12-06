@@ -2120,7 +2120,7 @@ def bot(op):
                                 cl.sendText(msg.to,lst + "\nTotal:" + total)
 #----------------------------------------------------------------------------
             elif msg.text in ["/quote"]:
-                quote = ['Barangsiapa yang suka meninggalkan barang di tempat umum maka ia akan kehilangan barangnya tersebut','Kunci KESUKSESAN itu cuma satu, yakni lu harus BERHASIL']
+                quote = ['janji emang manis,tapi pahit tidak lakukan','ibu adalah malaikat tak bersayap','Barangsiapa yang suka meninggalkan barang di tempat umum maka ia akan kehilangan barangnya tersebut','Kunci KESUKSESAN itu cuma satu, yakni lu harus BERHASIL']
                 rio = random.choice(quote)
                 cl.sendText(msg.to,rio)
 #---------------------------------------------------------
@@ -2139,7 +2139,7 @@ def bot(op):
                 for k in range(0, len(bulan)):
                     if bln == str(k): blan = bulan[k-1]
                 rst = hasil + ", " + inihari.strftime('%d') + " - " + blan + " - " + inihari.strftime('%Y') + "\nJam : [ " + inihari.strftime('%H:%M:%S') + " ]"
-                cl.sendText(msg.to, rst)
+                cl.sendText(msg.to,rst)
 #---------------------------------------------------------
 #---------------------------------------------------------
             elif msg.text in ["/kalender"]:
