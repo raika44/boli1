@@ -2003,17 +2003,11 @@ def bot(op):
                     wait["clock"] = False
                     kc.sendText(msg.to,"Jam Sedang Off")
          #-------------Fungsi Jam on/off Finish-------------------#  
-           elif "@Kevin" in msg.text:
-                tanya = msg.text.replace("@Kevin ","")
+           elif "@ " in msg.text:
+                tanya = msg.text.replace("@ ","")
                 jawab = ("Apa Sayang","Astaga Di Bilang Apa","Iya Aku Sayang","Be Mine?")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,jawaban)        
-
-           elif "@kevin" in msg.text:
-                tanya = msg.text.replace("@kevin ","")
-                jawab = ("apaaa","kenapaaaa","astagaaaa","bah")
-                jawaban = random.choice(jawab)
-                cl.sendText(msg.to,jawaban)
          
 #----------------------------------------------------------------------------
             elif msg.text.lower() == 'berjalan':
