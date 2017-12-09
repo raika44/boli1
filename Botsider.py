@@ -51,7 +51,6 @@ helpMessage ="""
 ☞ Instagram (username)
 ☞ youtube [name vidio]
 ☞ /image (text)
-☞ Crash
 ☞ Wiki (text)
 ☞ Siapakah cowok
 ☞ Siapakah cewek
@@ -60,10 +59,6 @@ helpMessage ="""
 ☞ /kalender
 ☞ /quote
 ☞ /cek (contoh: /cek 13-05-1999)
-☞ up/Up
-☞ Runtime
-☞ Mimic: (on/off)
-☞ Mimic: (add/del @)
 ☞ Creator
 ╚═══════M.E.N.U 1════════
 """
