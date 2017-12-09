@@ -30,7 +30,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 helpMessage ="""
-____________A.K.E.D_____________
+╔═══════M.E.N.U 1════════
 ☞ Apakah (seperti kerang ajaib)
 ☞ kedapkedip (text)
 ☞ Dosa @(by tag) = Buat lucu2an
@@ -56,8 +56,19 @@ ____________A.K.E.D_____________
 ☞ /image (text)
 ☞ Crash
 ☞ Wiki (text)
+☞ Siapakah cowok
+☞ Siapakah cewek
+☞ Berapa besar cinta
+☞ /time
+☞ /kalender
+☞ /quote
+☞ /cek (contoh: /cek 13-05-1999)
+☞ up/Up
+☞ Runtime
+☞ Mimic: (on/off)
+☞ Mimic: (add/del @)
 ☞ Creator
-____________A.K.E.D_____________
+╚═══════M.E.N.U 1════════
 """
 
 
