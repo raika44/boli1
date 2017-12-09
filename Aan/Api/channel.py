@@ -14,7 +14,7 @@ import tempfile
 class Channel:
     client = None
 
-    host = "gd2.line.naver.jp"
+    host = "gf.line.naver.jp"
     http_query_path = "/S4"
     channel_query_path = "/CH4"
 
@@ -30,7 +30,7 @@ class Channel:
 
     def __init__(self, authToken):
         self.authToken = authToken
-        self.transport = THttpClient.THttpClient('https://gd2.line.naver.jp:443'+self.http_query_path)
+        self.transport = THttpClient.THttpClient('https://gf.line.naver.jp:443'+self.http_query_path)
         self.transport.setCustomHeaders({ "User-Agent" : self.UA,
         "X-Line-Application" : self.LA,
         "X-Line-Access": self.authToken
