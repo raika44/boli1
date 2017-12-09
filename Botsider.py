@@ -16,11 +16,11 @@ import html5lib
 
 
 #kk = Aan.LINE()
-#kk.login(token="En9F8NgFpnCwt5FRGu3d.UvZQ8iaX1kDhGbAShThZ3q.BPHNVeQNnfow7SZ1SGynNg7eghAGXSqFPNpcJBcd3LI=")
+#kk.login(qr=True)
 #kk.loginResult()
 
 cl = Aan.LINE()
-cl.login(token="En9F8NgFpnCwt5FRGu3d.UvZQ8iaX1kDhGbAShThZ3q.BPHNVeQNnfow7SZ1SGynNg7eghAGXSqFPNpcJBcd3LI=")
+cl.login(qr=True)
 cl.loginResult()
 
 cl
@@ -49,7 +49,6 @@ helpMessage ="""
 ☞ /cancel = Membatalkan semua undanganan
 ☞ /ourl = Invite by link on
 ☞ /curl = Invite by link off
-☞ /keluar = Bot meninggalkan grup
 ☞ /musik <penyanyi> <judul>
 ☞ Instagram (username)
 ☞ youtube [name vidio]
@@ -2019,8 +2018,8 @@ def bot(op):
                     jawab = (cl.getProfile().displayName+" sedang sibuk/Off\nJika penting silakan Pesonal chat\n#Respon")
                     jawaban = (jawab)
                     cl.sendText(msg.to,jawaban)
-#----------------------------------------------------------------------------
-            elif msg.text.lower() == 'berjalan':
+#-----------------------Runtime-----------------------------------------------------
+            elif msg.text in ["Runtime"]:
                 eltime = time.time() - mulai
                 van = " Sudah Berjalan Selama "+waktu(eltime)
                 cl.sendText(msg.to,van)
@@ -2538,7 +2537,7 @@ def bot(op):
 
     #-------------Fungsi Leave Group Start---------------#
 
-	    elif msg.text in ["/keluar"]:
+	    elif msg.text in ["/bdshjahk"]:
 		if msg.toType == 2:
 		    ginfo = cl.getGroup(msg.to)
 		    try:
@@ -2839,7 +2838,7 @@ def bot(op):
 		start = time.time()
                 cl.sendText(msg.to, "Tunggu...")
                 elapsed_time = time.time() - start
-		cl.sendText(msg.to, "%sseconds" % (elapsed_time))
+		cl.sendText(msg.to, "%8637653 / Detik" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
 
       #-------------Fungsi Banned Send Contact Start------------------#
