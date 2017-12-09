@@ -17,7 +17,7 @@ class Talk:
   auth_query_path = "/api/v4/TalkService.do";
   http_query_path = "/S4";
   wait_for_mobile_path = "/Q";
-  host = "gd2.line.naver.jp";
+  host = "gf.line.naver.jp";
   port = 443;
 
   UA = "Line/7.14.0"
@@ -27,7 +27,7 @@ class Talk:
   cert = None
 
   def __init__(self):
-    self.transport = THttpClient.THttpClient('https://gd2.line.naver.jp:443'+self.auth_query_path)
+    self.transport = THttpClient.THttpClient('https://gf.line.naver.jp:443'+self.auth_query_path)
     self.transport.setCustomHeaders({
       "User-Agent" : self.UA,
       "X-Line-Application" : self.LA,
