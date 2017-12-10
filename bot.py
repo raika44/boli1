@@ -1,15 +1,21 @@
 # -*- coding: utf-8 -*-
 
-import LINETCR
-from LINETCR.lib.curve.ttypes import *
+import Aan
+from Aan.lib.curve.ttypes import *
 from datetime import datetime
-import time,random,sys,json,codecs,threading,glob,re,datetime,subprocess,urllib3,os,requests,urllib,goslate,pyowm
 from bs4 import BeautifulSoup
-from threading import Thread
-from pyowm import OWM
+import time, random, sys, re, os, json, subprocess, threading, glob, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
+import requests
+from gtts import gTTS
+import goslate
+from urllib import urlopen
+import urllib2
+import urllib3
+import tempfile
+import html5lib
 
 cl = LINETCR.LINE()
-cl.login(qr=True)
+cl.login(token="EnMtvLdtNo6K4ckNN5sd.UvZQ8iaX1kDhGbAShThZ3q.yrEQOSuqpgs6SwXz7q+IhDwz05E3N3E+HsjuYemmlRM=")
 cl.loginResult()
 
 #kk = LINETCR.LINE()
@@ -55,6 +61,9 @@ helpMessage ="""
 
 KAC=[cl]
 dmid = cl.getProfile().mid
+#Amid = ki.getProfile().mid
+#Bmid = kk.getProfile().mid
+#Cmid = kc.getProfile().mid
 Bots = [dmid]
 admin = ["ube187443474747c3ec352e7efeb48c1b"]
 owner = ["ube187443474747c3ec352e7efeb48c1b"]
