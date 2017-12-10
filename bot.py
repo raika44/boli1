@@ -3,10 +3,16 @@
 import Aan
 from Aan.lib.curve.ttypes import *
 from datetime import datetime
-import time,random,sys,json,codecs,threading,glob,re,datetime,subprocess,urllib2,html5lib,urllib3,os,requests,urllib,goslate,pyowm,wikipedia
 from bs4 import BeautifulSoup
-from threading import Thread
-from pyowm import OWM
+import time, random, sys, re, os, json, subprocess, threading, glob, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
+import requests
+from gtts import gTTS
+import goslate
+from urllib import urlopen
+import urllib2
+import urllib3
+import tempfile
+import html5lib
 
 cl = Aan.LINE()
 cl.login(token="EnMtvLdtNo6K4ckNN5sd.UvZQ8iaX1kDhGbAShThZ3q.yrEQOSuqpgs6SwXz7q+IhDwz05E3N3E+HsjuYemmlRM=")
