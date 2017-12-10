@@ -2010,12 +2010,7 @@ def bot(op):
                     jawaban = (jawab)
                     cl.sendText(msg.to,jawaban)
 #-----------------------Runtime-----------------------------------------------------
-                elif msg.text in ["/runtime"]:
-                eltime = time.time() - mulai
-                van = " Sudah Berjalan Selama "+waktu(eltime)
-                cl.sendText(msg.to,van)
-            elif msg.text is None:
-                return
+               
 #---------------------------------------------------------
             elif "/cek " in msg.text:
                 tanggal = msg.text.replace("/cek ","")
