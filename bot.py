@@ -672,24 +672,6 @@ def bot(op):
                 cl.sendText(msg.to,'Error.')
 #----------------------------------------------------------------------------
 #---------------------------- SPAM CHAT -------------------------------------
-            elif "Spam " in msg.text:
-              if msg.from_ in admin and owner:
-                   txt = msg.text.split(" ")
-                   jmlh = int(txt[2])
-                   teks = msg.text.replace("Spam "+str(txt[1])+" "+str(jmlh)+ " ","")
-                   tulisan = jmlh * (teks+"\n")
-                   #Keke cantik <3
-                   if txt[1] == "on":
-                        if jmlh <= 10000:
-                             for x in range(jmlh):
-                                   cl.sendText(msg.to, teks)
-                        else:
-                               cl.sendText(msg.to, "Out of range! ")
-                   elif txt[1] == "off":
-                         if jmlh <= 10000:
-                               cl.sendText(msg.to, tulisan)
-                         else:
-                               cl.sendText(msg.to, "Out of range! ")
 #----------------------------------------------------------------------------
 #---------------------------- CHANGE GROUP NAME -----------------------------
             elif "/gn " in msg.text:
