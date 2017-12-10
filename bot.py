@@ -195,6 +195,7 @@ def _images_get_all_items(page):
             time.sleep(0.1)        #Timer could be used to slow down the request for image downloads
             page = page[end_content:]
     return items
+
 def NOTIFIED_READ_MESSAGE(op):
     try:
         if op.param1 in wait2['readPoint']:
@@ -672,6 +673,14 @@ def bot(op):
                 cl.sendText(msg.to,'Error.')
 #----------------------------------------------------------------------------
 #---------------------------- SPAM CHAT -------------------------------------
+            elif "/spam " in msg.text:
+                if msg.from_ in staff:
+                    txt = msg.text.split(" ")
+                    jmlh = int(txt[1])
+                    teks = msg.text.replace("/spam " + str(jmlh) + " ","")
+                    if jmlh <= 999:
+                        for x in range(jmlh):
+                            cl.sendText(msg.to,teks)
 #----------------------------------------------------------------------------
 #---------------------------- CHANGE GROUP NAME -----------------------------
             elif "/gn " in msg.text:
