@@ -671,13 +671,6 @@ def bot(op):
             else:
                 cl.sendText(msg.to,'Error.')
 #----------------------------------------------------------------------------
-            elif msg.text.lower() == 'Runtime':
-                eltime = time.time() - mulai
-                van = "Serk_Bot Sudah Berjalan Selama "+waktu(eltime)
-                cl.sendText(msg.to,van)
-                
-            elif msg.text is None:
-                return
 #---------------------------- SPAM CHAT -------------------------------------
             elif "/spam " in msg.text:
                 if msg.from_ in staff:
