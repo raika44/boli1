@@ -3,9 +3,6 @@ import requests,shutil,random,string,json,tempfile
 import unicodedata
 from random import randint
 from Api import Poll, Talk, channel
-import requests,tempfile
-import shutil
-import json
 from time import time
 from datetime import datetime
 from lib.curve.ttypes import *
@@ -27,7 +24,7 @@ class LINE:
   def __init__(self):
     self.Talk = Talk()
     self._session = requests.session()
-    self._headers = {'X-Line-Application': 'IOSIPAD\t7.14.0\tiPhone OS\t10.12.0', 'X-Line-Access': 'EnMtvLdtNo6K4ckNN5sd.UvZQ8iaX1kDhGbAShThZ3q.yrEQOSuqpgs6SwXz7q+IhDwz05E3N3E+HsjuYemmlRM=', 'User-Agent': 'Line/7.14.0'}
+    self._headers = {'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64 MAC 4.5.0', 'X-Line-Access': 'EnMtvLdtNo6K4ckNN5sd.UvZQ8iaX1kDhGbAShThZ3q.yrEQOSuqpgs6SwXz7q+IhDwz05E3N3E+HsjuYemmlRM=', 'User-Agent': 'Line/6.0.0 iPad4,1 9.0.2'}
 
   def login(self, mail=None, passwd=None, cert=None, token=None, qr=False, callback=None):
     if callback is None:
@@ -309,9 +306,6 @@ class LINE:
 
   """Group"""
 
-  def findGroupByTicket(self, ticketId):
-        return self.Talk.client.findGroupByTicket(ticketId)
-
   def acceptGroupInvitation(self, groupId):
         return self.Talk.client.acceptGroupInvitation(0, groupId)
 
@@ -427,7 +421,7 @@ class LINE:
 
       prof = self.getProfile()
 
-      print("Aked - Bot")
+      print("Gatau Ah")
       print("Mid 		: " + prof.mid)
       print("Name 		: " + prof.displayName)
       print("AuthToken 	: " + self.authToken)
