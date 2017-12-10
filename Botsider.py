@@ -2010,7 +2010,7 @@ def bot(op):
                     jawaban = (jawab)
                     cl.sendText(msg.to,jawaban)
 #-----------------------Runtime-----------------------------------------------------
-            elif msg.text in ["Runtime"]:
+                elif msg.text == "Runtime":
                 eltime = time.time() - mulai
                 van = " Sudah Berjalan Selama "+waktu(eltime)
                 cl.sendText(msg.to,van)
@@ -2829,7 +2829,7 @@ def bot(op):
 		start = time.time()
                 cl.sendText(msg.to, "Tunggu...")
                 elapsed_time = time.time() - start
-		cl.sendText(msg.to, "%8637653 / Detik" % (elapsed_time))
+		cl.sendText(msg.to, "%s8637653 / Detik" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
 
       #-------------Fungsi Banned Send Contact Start------------------#
