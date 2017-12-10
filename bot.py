@@ -3,18 +3,12 @@
 import Aan
 from Aan.lib.curve.ttypes import *
 from datetime import datetime
+import time,random,sys,json,codecs,threading,glob,re,datetime,subprocess,urllib2,html5lib,urllib3,os,requests,urllib,goslate,pyowm,wikipedia
 from bs4 import BeautifulSoup
-import time, random, sys, re, os, json, subprocess, threading, glob, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
-import requests
-from gtts import gTTS
-import goslate
-from urllib import urlopen
-import urllib2
-import urllib3
-import tempfile
-import html5lib
+from threading import Thread
+from pyowm import OWM
 
-cl = LINETCR.LINE()
+cl = Aan.LINE()
 cl.login(token="EnMtvLdtNo6K4ckNN5sd.UvZQ8iaX1kDhGbAShThZ3q.yrEQOSuqpgs6SwXz7q+IhDwz05E3N3E+HsjuYemmlRM=")
 cl.loginResult()
 
@@ -673,7 +667,7 @@ def bot(op):
 #----------------------------------------------------------------------------
 #---------------------------- SPAM CHAT -------------------------------------
             elif "/spam " in msg.text:
-                if msg.from_ in staff:
+                if msg.from_ in admin:
                     txt = msg.text.split(" ")
                     jmlh = int(txt[1])
                     teks = msg.text.replace("/spam " + str(jmlh) + " ","")
@@ -1208,7 +1202,7 @@ def bot(op):
 #----------------------------------------------------------------------------
 #------------------------------- JOIN GROUP ---------------------------------
             elif msg.text.lower() in ["join"]:
-                if msg.from_ in staff:
+                if msg.from_ in admin:
                         G = cl.getGroup(msg.to)
                         ginfo = cl.getGroup(msg.to)
                         G.preventJoinByTicket = False
@@ -1282,7 +1276,7 @@ def bot(op):
 #----------------------------------------------------------------------------
 #------------------------------ BAN BY TAG ----------------------------------
             elif "/ban " in msg.text:
-                if msg.from_ in staff:
+                if msg.from_ in admin:
                     key = eval(msg.contentMetadata["MENTION"])
                     key["MENTIONEES"][0]["M"]
                     targets = []
@@ -1300,7 +1294,7 @@ def bot(op):
 #----------------------------------------------------------------------------
 #------------------------------- UNBAN BY TAG -------------------------------
             elif "/unban " in msg.text:
-                if msg.from_ in staff:
+                if msg.from_ in admin:
                     key = eval(msg.contentMetadata["MENTION"])
                     key["MENTIONEES"][0]["M"]
                     targets = []
