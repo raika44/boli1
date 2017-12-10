@@ -15,11 +15,11 @@ import tempfile
 import html5lib
 
 #kk = Aan.LINE()
-#kk.login(Token="Enbd2aZjtYffpnQrZ2Pd.UvZQ8iaX1kDhGbAShThZ3q.T6Phs/CSgh+TQRCTJjmhUVkydPcRBtYVu7VBicWJgzg=")
+#kk.login(qr=true)
 #kk.loginResult()
 
 cl = Aan.LINE()
-cl.login(token="Enbd2aZjtYffpnQrZ2Pd.UvZQ8iaX1kDhGbAShThZ3q.T6Phs/CSgh+TQRCTJjmhUVkydPcRBtYVu7VBicWJgzg=")
+cl.login(qr=true)
 cl.loginResult()
 print " ̵̧̧̢̠̗̱̗̲̝̪͇͇̐̓̓̀̀͢͞͞ͅͅǍ̜̖̼̤͔̤̝̲̗̣͍̮̽͝҉̡̡̨̧̕͢͜͠͡͡҉͞ḁ̴̸̴̡̧̢̧̜̟̥̣̩͎̼̟ͦ͗̾̿̇ͨ̍̎̉̉ͥ̋́̀͞͞͡͠͏̸̛͞͝n̦̞̭̘̯̺̗͔̲͓̖̭̤̱̖̦̑͘҉҉̛͏̡̨̛͡҉̡̡͘ ̷̗͙̫̠̹̹̙̳͚͉̦͈͖̺̤̆͑ͯ̈́͝J̞̟̫̮̜̬̘̫̗͈͚̗͔͕̻̝ͩ̋ͤͩͣ̋ͣ̐ͯ͗̈́̿̊̓͐̾͌͛ữ̴̴̸̢͈͕̙̮̭͍͔͖̪̣̘͙̬̺͐̾͒̃̀͆͐͆̀̇̕̕͘͜҉̷̴̴̛͡t̸̴̨̧̧̨̡͙͔̬̭̱̪̪͈͎̺̣̰̱̥͖̘͈̰̻̹ͦͯ̋̏͊̇̇ͩ̈́̆͊̌͋̿͟͜͟͟͜͡͡͝ȁ̷̺̭͎̙̩̝̝̻͖̮̼͍͈͈͓̻͕̻͇͍̉͒ͫͦ̃ͯ̎̃̿ͧ̈̾̊̏̄̄̍͟҉w̠̘͍̘̱͙̺͙̮̟͖̻̙̹͍̻̑̏͛̋͐̔ͥ̆ͧ̎ͪͫͨͣ͋ͦ̍̎̀ͅͅͅ͏̶̕͘͢͜҉̵̢͘҉̸͘̕͝ḁ̵̶̡̛͎͔̺̘͍ͫ̉̅̈́͑ͦ̊̚̕͏҉͢n̥̯̫̘͋̂̀́́͘҉̵̧̢͘͢͟͝͡͞"
 reload(sys)
