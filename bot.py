@@ -15,7 +15,9 @@ import tempfile
 import html5lib
 
 cl = Aan.LINE()
-cl.login(qr=True)
+cl.login(token="UHQIq7IeS1+ZvB7x0VoR49mjmGTbjiF5rdg1ANbPdR2OyVFI3h39WyAWJVhBte3xk1Nupbr8aUstBOD3Z/lJAohDeG+RvEpqY62ByY0m2wuvjVnEvX/BvU4mwpJmxvnWBVN0RJKTBKjYHanKxHupmwdB04t89/1O/w1cDnyilFU=
+")
+#cl.login(qr=True)
 cl.loginResult()
 
 #kk = LINETCR.LINE()
