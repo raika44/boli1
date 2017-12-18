@@ -16,8 +16,8 @@ import html5lib
 
 
 cl = Aan.LINE()
-cl.login(qr=True)
-#cl.login(token="")
+#cl.login(qr=True)
+cl.login(token="EnQcRQh5qNcc6SRZOk1b.VHH0q0Dhr8pSns5/+RsmgW.ByD5LqWI3VlNICrUhqkfaXYIEouZ1XA+Vi7MGRS5Z+I=")
 cl.loginResult()
 
 print "login success"
@@ -303,7 +303,7 @@ def bot(op):
 		print ("\n\nRECEIVE_MESSAGE\n\n")
 		return
 
-        if op.type == 26:
+        if op.type == 25:
 	    msg = op.message
 
             if msg.toType == 1:
@@ -312,7 +312,7 @@ def bot(op):
             if msg.contentType == 16:
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
-        if op.type == 26:
+        if op.type == 25:
             msg = op.message
             if msg.contentType == 13:
                if wait["wblack"] == True:
