@@ -49,8 +49,6 @@ Google <yg dicari>
 /cancel = Membatalkan semua undanganan
 /ourl = Invite by link on
 /curl = Invite by link off
-/help = Menampilkan keyword
-/keluar = Bot meninggalkan grup
 /restart = merestart bot
 /cek <tanggal> |contoh: /cek 21-02-2222
 /musik <penyanyi> <judul>
@@ -263,7 +261,7 @@ def bot(op):
 	   if wait["Byemessage"] == True:
 	    if op.param2 in Bots:
 		return
-	    cl.sendText(op.param1, "Good bye..(=ﾟωﾟ)ﾉ")
+	    cl.sendText(op.param1, "Bah..Semoga Meninggal. Haha")
 	    print "MemberLeft"
 
 #------------------------------------------------------
@@ -1602,7 +1600,7 @@ def bot(op):
 	    elif "@"+cl.getProfile().displayName in msg.text:
 	      if wait["tag"] == True:
                 resp = ("《《AUTO RESPON》》\n")
-                jawab = ("apa kak ? ketik /help untuk bantuan","Cie ngetag bot\nketik /help.")
+                jawab = ("bacot lo anjing","gue lagi coli")
 		jawabam = random.choice(jawab)
                 cl.sendText(msg.to,resp + jawabam)
 
@@ -1982,7 +1980,7 @@ def bot(op):
     #-------------Fungsi Leave Group Start---------------#
 
 	    elif msg.text in ["/keluar"]:
-	      if msg.from_ in staff:
+	      if msg.from_ in admin:
 		if msg.toType == 2:
 		    ginfo = cl.getGroup(msg.to)
 		    try:
