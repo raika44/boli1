@@ -19,7 +19,7 @@ import html5lib
 #kk.loginResult()
 
 cl = Aan.LINE()
-cl.login(token="EnMtvLdtNo6K4ckNN5sd.UvZQ8iaX1kDhGbAShThZ3q.yrEQOSuqpgs6SwXz7q+IhDwz05E3N3E+HsjuYemmlRM=")
+cl.login(token="EnI2Yh5KEszUVH5mpYqd.O9Sg8jZkwCjgi8TlzrJrZq.BOH7L5j+to54iZxBdqgqQTR5PVzumpJXME3lbEi9FSU=")
 cl.loginResult()
 print " ̵̧̧̢̠̗̱̗̲̝̪͇͇̐̓̓̀̀͢͞͞ͅͅǍ̜̖̼̤͔̤̝̲̗̣͍̮̽͝҉̡̡̨̧̕͢͜͠͡͡҉͞ḁ̴̸̴̡̧̢̧̜̟̥̣̩͎̼̟ͦ͗̾̿̇ͨ̍̎̉̉ͥ̋́̀͞͞͡͠͏̸̛͞͝n̦̞̭̘̯̺̗͔̲͓̖̭̤̱̖̦̑͘҉҉̛͏̡̨̛͡҉̡̡͘ ̷̗͙̫̠̹̹̙̳͚͉̦͈͖̺̤̆͑ͯ̈́͝J̞̟̫̮̜̬̘̫̗͈͚̗͔͕̻̝ͩ̋ͤͩͣ̋ͣ̐ͯ͗̈́̿̊̓͐̾͌͛ữ̴̴̸̢͈͕̙̮̭͍͔͖̪̣̘͙̬̺͐̾͒̃̀͆͐͆̀̇̕̕͘͜҉̷̴̴̛͡t̸̴̨̧̧̨̡͙͔̬̭̱̪̪͈͎̺̣̰̱̥͖̘͈̰̻̹ͦͯ̋̏͊̇̇ͩ̈́̆͊̌͋̿͟͜͟͟͜͡͡͝ȁ̷̺̭͎̙̩̝̝̻͖̮̼͍͈͈͓̻͕̻͇͍̉͒ͫͦ̃ͯ̎̃̿ͧ̈̾̊̏̄̄̍͟҉w̠̘͍̘̱͙̺͙̮̟͖̻̙̹͍̻̑̏͛̋͐̔ͥ̆ͧ̎ͪͫͨͣ͋ͦ̍̎̀ͅͅͅ͏̶̕͘͢͜҉̵̢͘҉̸͘̕͝ḁ̵̶̡̛͎͔̺̘͍ͫ̉̅̈́͑ͦ̊̚̕͏҉͢n̥̯̫̘͋̂̀́́͘҉̵̧̢͘͢͟͝͡͞"
 reload(sys)
