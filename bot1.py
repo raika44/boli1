@@ -16,8 +16,8 @@ import html5lib
 
 
 cl = Aan.LINE()
-cl.login(qr=True)
-#cl.login(token="")
+#cl.login(qr=True)
+cl.login(token="EnI2Yh5KEszUVH5mpYqd.O9Sg8jZkwCjgi8TlzrJrZq.BOH7L5j+to54iZxBdqgqQTR5PVzumpJXME3lbEi9FSU=")
 cl.loginResult()
 
 print "login success"
