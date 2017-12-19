@@ -243,7 +243,6 @@ def bot(op):
             if op.param3 in Bots:
                 if op.param2 in admin:
                     cl.acceptGroupInvitation(op.param1)
-                    cl.sendText(op.param1, "Makasih udah undang saya ^_^"")
                     print "Bot join grup"
 
 
