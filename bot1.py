@@ -1734,18 +1734,20 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Already off")
 #-----------------------------[Command]-----------------------------#
-            elif "@.Aked " in msg.text:
+            elif "@.Aked" in msg.text:
 	      if wait["tag"] == True:
 		resp = ("《《AUTO RESPON》》\n")
                 jawab = ("dia sibuk!!","pc aja kalo begitu")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,resp + jawaban)
 
-	        elif "@"+cl.getProfile().displayName in msg.text:
-	        if wait["tag"] == True:
-	        wk = ("bacot lo anjing","gue lagi coli","ada apa si ngtag","pc aja")
-		jawabam = random.choice(wk)
-                cl.sendText(msg.to,jawabam)
+
+	    elif "@"+cl.getProfile().displayName in msg.text:
+	      if wait["tag"] == True:
+                resp = ("《《AUTO RESPON》》\n")
+                jawab = ("bacot lo anjing","gue lagi coli","ada apa si ngtag","pc aja")
+		jawabam = random.choice(jawab)
+                cl.sendText(msg.to,resp + jawabam)
 
 	    elif msg.text in ["Invite"]:
                 wait["winvite"] = True
