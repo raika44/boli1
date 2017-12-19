@@ -191,6 +191,13 @@ def restart_program():
     python = sys.executable
     os.execl(python, python, * sys.argv)
 
+
+contact = cl.getProfile()
+mybackup = cl.getProfile()
+mybackup.displayName = contact.displayName
+mybackup.statusMessage = contact.statusMessage
+mybackup.pictureStatus = contact.pictureStatus
+
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
     mes.to, mes.from_ = to, profile.mid
