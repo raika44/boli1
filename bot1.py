@@ -1641,7 +1641,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Already off")
 #-----------------------------[Command]-----------------------------#
-            elif "@ই͜͜͡☬Giananda " in msg.text:
+            elif "@Kevin " in msg.text:
 	      if wait["tag"] == True:
 		resp = ("《《AUTO RESPON》》\n")
                 jawab = ("Jgn Tag Si Giananda!!","Berisik jgn tag si Giananda")
