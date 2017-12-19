@@ -178,6 +178,12 @@ wait2 = {
     'ROM':{}
     }
 
+wait3 = {
+    "copy":False,
+    "copy2":"target",
+    "target":{}
+    }
+
 setTime = {}
 setTime = wait2['setTime']
 
@@ -207,6 +213,11 @@ def NOTIFIED_READ_MESSAGE(op):
             pass
     except:
         pass
+
+def waktu(secs):
+    mins, secs = divmod(secs,60)
+    hours, mins = divmod(mins,60)
+    return '%02d Jam %02d Menit %02d Detik' % (hours, mins, secs)
 
 #-------------------
 
