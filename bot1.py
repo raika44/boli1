@@ -287,7 +287,7 @@ def bot(op):
                     group = cl.getGroup(op.param1)
 		    cb = Message()
                     cb.to = op.param1
-                    cb.text = cl.getContact(op.param2).displayName + "\n\nIya Kamu Jangan Nakal dan  Jangan Spam Ikutin Peraturan Yang Ada Di : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
+                    cb.text = cl.getContact(op.param2).displayName + "\n\nWelcome Di : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
                     cl.sendMessage(cb)
 
 	if op.type == 15:
@@ -1407,6 +1407,18 @@ def bot(op):
 	    elif msg.text in ["Pagi","pagi","selamat pagi","Selamat Pagi","Ohayou","Ohayo","ohayou","ohayo","Met pagi","met pagi"]:
 		 sapa = ("オハイオニイちゃんおにちゃんガンバッテクダサイイネ")
                  tts = gTTS(sapa, lang='ja', slow=False)
+                 tts.save('tts.mp3')
+                 cl.sendAudio(msg.to, 'tts.mp3')
+
+	    elif msg.text in ["malam","Malam"]:
+		 sapa = ("모든 굿나잇은 잊지 마라")
+                 tts = gTTS(sapa, lang='ja', slow=False)
+                 tts.save('tts.mp3')
+                 cl.sendAudio(msg.to, 'tts.mp3')
+
+	    elif msg.text in ["Alista","alista","Sayang alista"]:
+		 sapa = ("sayang kamu dimana kevin merindukamu alista ku sayang salam dari kevin")
+                 tts = gTTS(sapa, lang='id', slow=False)
                  tts.save('tts.mp3')
                  cl.sendAudio(msg.to, 'tts.mp3')
 
