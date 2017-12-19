@@ -1870,8 +1870,6 @@ def bot(op):
                 eltime = time.time() - mulai
                 van = "「Sudah berjalan selama 」"+waktu(eltime)
                 cl.sendText(msg.to,van)
-            elif msg.text is None:
-                return
 #----------------
             elif "Steal contact" in msg.text:
                 key = eval(msg.contentMetadata["MENTION"])
