@@ -15,7 +15,7 @@ class Poll:
   auth_query_path = "/api/v4/TalkService.do";
   http_query_path = "/S4";
   polling_path = "/P4";
-  host = "gf.line.naver.jp";
+  host = "gd2.line.naver.jp";
   port = 443;
 
   UA = "Line/1.4.17"
