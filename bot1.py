@@ -1955,7 +1955,7 @@ def bot(op):
                 welcome = random.choice(wc)
                 gblg = random.choice(goblog)
 		gambar = msg.text.replace("kev pap ", "")
-                elif msg.text in ["welcome"]:
+                if gambar msg.text in ["welcome"]:
                 cl.sendImageWithURL(msg.to, welcome)
                 elif msg.text in ["goblog"]:
                 cl.sendImageWithURL(msg.to, gblg)
