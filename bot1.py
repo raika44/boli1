@@ -167,7 +167,9 @@ wait = {
     "Byemessage":True,
     "likeOn":True,
     "tag":True,
-    "winvite":False,
+    "winvite":True,
+    "Pap":True,
+    "vid":True,
     "displayName":{},
     }
 
