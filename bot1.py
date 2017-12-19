@@ -134,8 +134,8 @@ steal ="""
 ╚═══════ Mimic ════════
 """
 
-KAC=[cl]
-mid=cl.getProfile().mid
+KAC= [cl]
+mid= cl.getProfile().mid
 
 Bots=[mid,"ube187443474747c3ec352e7efeb48c1b"]
 admin=["ube187443474747c3ec352e7efeb48c1b","ua3db06f09cca59c24623cb4b6518d1cd"]
@@ -287,7 +287,7 @@ def bot(op):
                     group = cl.getGroup(op.param1)
 		    cb = Message()
                     cb.to = op.param1
-                    cb.text = cl.getContact(op.param2).displayName + "\n\nIya Kamu, Jangan Nakal dan  Jangan Spam.. Ikutin Peraturan Yang Ada Di : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
+                    cb.text = cl.getContact(op.param2).displayName + "\n\nIya Kamu Jangan Nakal dan  Jangan Spam Ikutin Peraturan Yang Ada Di : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
                     cl.sendMessage(cb)
 
 	if op.type == 15:
@@ -1956,7 +1956,7 @@ def bot(op):
                 goblog = ["http://s2.quickmeme.com/img/0e/0e67b457f3c3f47d39003c39a1475bf21538caa7ddd7d2c7dcd5dc890d132b13.jpg"]
                 welcome = random.choice(wc)
                 gblg = random.choice(goblog)
-		gambar = msg.text.replace("kev pap ", "")
+                cl.sendText(msg.to,".... " + welcome + "adalah " + gblg + "\n...")
 
 
 #-------------------------------------------------
