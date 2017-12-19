@@ -1741,12 +1741,14 @@ def bot(op):
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,resp + jawaban)
 
-	    elif "@"+cl.getProfile().displayName in msg.text:
 	      if wait["tag"] == True:
-                resp = ("《《AUTO RESPON》》\n")
-                jawab = ("bacot lo anjing","gue lagi coli","ada apa si ngtag","pc aja")
-		jawabam = random.choice(jawab)
-                cl.sendText(msg.to,resp + jawabam)
+	         if msg.toType == 0:
+	           if msg.from_ not in friend:
+	        contact = cl.getContact(msg.from_)
+	        cName = contact.displayName
+	        wk = [cName + ", Ada Apa?",cName + ", Ngapain Sii?",cName + ", Mending Pc"]
+		jawabam = random.choice(wk)
+                cl.sendText(msg.from_,jawabam)
 
 	    elif msg.text in ["Invite"]:
                 wait["winvite"] = True
@@ -1962,13 +1964,6 @@ def bot(op):
             elif msg.text in [".vid","Vid"]:
                 cl.sendVideoWithURL(msg.to,wait["vid"])
 
-
-	    elif "kev pap" in msg.text:
-                wc = ["http://hoodmemorial.org/wp-content/uploads/2017/07/welcome.jpg"]
-                goblog = ["http://s2.quickmeme.com/img/0e/0e67b457f3c3f47d39003c39a1475bf21538caa7ddd7d2c7dcd5dc890d132b13.jpg"]
-                welcome = random.choice(wc)
-                gblg = random.choice(goblog)
-                cl.sendText(msg.to,".... " + welcome + "adalah " + gblg + "\n...")
 
 
 #-------------------------------------------------
