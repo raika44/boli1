@@ -26,97 +26,103 @@ sys.setdefaultencoding('utf-8')
 
 helpMessage ="""
 ╔═══════ M.E.N.U ════════
-Apakah <teks> (seperti kerang ajaib)
-kedapkedip <Teks>= coba aja
-Dosa @(by tag) = Buat lucu2an
-Pahala @(by tag) = Buat lucu2an
-Cinta <teks> = buat lucu2an
-Mid @(by tag) = melihat mid
-Info @(by tag) = info yg di tag
-Steal = Menu steal
-Say =  menu teks ke suara 
-Gift = menu gift
-Invite = mengundang by kontak
-Pap set <link gambar>
-Pap = mengirim gambar yg telah di set
-Google <yg dicari>
-/set > /tes Untuk Cek Sider
-/tagall = Tag semua member
-/tid = translate ing > ind
-/ten = translate ind > ing
-/gcreator = Menunjukkan pembuat grup
-/ginfo = Info grup
-/cancel = Membatalkan semua undanganan
-/ourl = Invite by link on
-/curl = Invite by link off
-/restart = merestart bot
-/cek <tanggal> |contoh: /cek 21-02-2222
-/musik <penyanyi> <judul>
-/wiki <yg dicari>
-/image <yg dicari>
-/video <judul>
-/ig <nama>
-/yt <judul>
-/ps <app playstore>
-
-Nb: gausah pake <>
+╠➩Apakah <teks> (seperti kerang ajaib)
+╠➩kedapkedip <Teks>= coba aja
+╠➩Dosa @(by tag) = Buat lucu2an
+╠➩Pahala @(by tag) = Buat lucu2an
+╠➩Cinta <teks> = buat lucu2an
+╠➩Mid @(by tag) = melihat mid
+╠➩Info @(by tag) = info yg di tag
+╠➩Invite = mengundang by kontak
+╠➩Pap set <link gambar>
+╠➩Pap = mengirim gambar yg telah di set
+╠➩Google <yg dicari>
+╠➩/set > /tes Untuk Cek Sider
+╠➩/tagall = Tag semua member
+╠➩/tid = translate ing > ind
+╠➩/ten = translate ind > ing
+╠➩/gcreator = Menunjukkan pembuat grup
+╠➩/ginfo = Info grup
+╠➩/cancel = Membatalkan semua undanganan
+╠➩/ourl = Invite by link on
+╠➩/curl = Invite by link off
+╠➩/restart = merestart bot
+╠➩/cek <tanggal> |contoh: /cek 21-02-2222
+╠➩/musik <penyanyi> <judul>
+╠➩/wiki <yg dicari>
+╠➩/image <yg dicari>
+╠➩/video <judul>
+╠➩/ig <nama>
+╠➩/yt <judul>
+╠➩/ps <app playstore>
 ╚═══════ M.E.N.U ════════
+➩ Nb: gausah pake <>
+╚═══════ M.E.N.U ════════
+✟ Steal = Menu steal
+✟ Say =  menu teks ke suara 
+✟ Gift = menu gift
+✟ Admin = menu admin
 """
-qwerty ="""ADMIN KEY
-List grup
-Gbc
-Gbcs
-Gbcp
-Cbc
-Cb
-Cn
-K on/off
-W on/off
-Like on/off
-Join on/offf
-Bye on/off
-Tag on/off
-Invitemeto <gid>
-Keluar dari <gid>
-Spam on/off <jumlah> <kata>
+qwerty ="""
+╔═════════════════
+║  ✟Khusus Admin✟   
+╠═════════════════
+╠➩ List grup
+╠➩ Gbc
+╠➩ Gbcs
+╠➩ Gbcp
+╠➩ Cbc
+╠➩ Cb
+╠➩ Cn
+╠➩ K on/off
+╠➩ W on/off
+╠➩ Like on/off
+╠➩ Join on/offf
+╠➩ Bye on/off
+╠➩ Tag on/off
+╠➩ Invitemeto <gid>
+╠➩ Keluar dari <gid>
+╠➩ Spam on/off <jumlah> <kata>
+╚═══════════════
 """
-hadiah ="""===Key===
-/gift1
-/gift2
-/gift3
-/gift4
-/all gift
-/unicode1
-
+hadiah ="""
+╔═══════ M.E.N.U ════════
+╠➩/gift1
+╠➩/gift2
+╠➩/gift3
+╠➩/gift4
+╠➩/all gift
+╠➩/unicode1
+╚═══════M.E.N.U 1════════
 Nb: untuk line versi uptodate unicode tidak menyababkan lag
 """
 
 say =""" 
 ╔═══════ M.E.N.U ════════
-/say <teks> = teks ke suara Indo
-.say Jepang
--say inggris
-*say Arab
-#say Korea
-!say Jawa
-^say Sunda
-'say prancis
+╠➩/say <teks> = teks ke suara Indo
+╠➩.say Jepang
+╠➩-say inggris
+╠➩*say Arab
+╠➩#say Korea
+╠➩!say Jawa
+╠➩^say Sunda
+╠➩'say prancis
 ╚═══════M.E.N.U 1════════"""
 
 steal ="""
 ╔═══════ M.E.N.U ════════
-Steal dp @(by tag)
-Steal home @(by tag)
-Steal bio @(by tag)
-Steal contact @(by tag)
-Steal grup = melihat dp grup
-Steal gid = melihat id grup
-Myname = nama kalian
-Mybio = bio kalian
-Mymid = mid kalian
-Mydp = dp kalian
-Mycover = cover kalian
-Mycontact = kontak kalian
+╠➩Steal dp @(by tag)
+╠➩Steal home @(by tag)
+╠➩Steal bio @(by tag)
+╠➩Steal contact @(by tag)
+╠➩Steal grup = melihat dp grup
+╠➩Steal gid = melihat id grup
+╠➩Myname = nama kalian
+╠➩Mybio = bio kalian
+╠➩Mymid = mid kalian
+╠➩Mydp = dp kalian
+╠➩Mycover = cover kalian
+╠➩Mycontact = kontak kalian
 ╚═══════ M.E.N.U ════════
 """
 
@@ -230,14 +236,14 @@ def bot(op):
 	    if op.param3 in Bots:
 		if wait["autojoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
-		    cl.sendText(op.param1, "Terimakasih ＼(^o^)／\nSilahkan ketik /help.")
+		    cl.sendText(op.param1, "Makasih udah undang saya ^_^")
 		    print "Bot join grup"
 #------Cancel Invite User Finish------##
         if op.type == 13:
             if op.param3 in Bots:
                 if op.param2 in admin:
                     cl.acceptGroupInvitation(op.param1)
-                    cl.sendText(op.param1, "Terimakasih ＼(^o^)／\nSilahkan ketik /help.")
+                    cl.sendText(op.param1, "Makasih udah undang saya ^_^"")
                     print "Bot join grup"
 
 
@@ -409,7 +415,7 @@ def bot(op):
                     cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
-            elif msg.text in ["help"]:
+            elif msg.text in ["Admin"]:
               if msg.from_ in admin:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,qwerty)
@@ -1590,17 +1596,17 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Already off")
 #-----------------------------[Command]-----------------------------#
-            elif "@ই͜͜͡☬Giananda " in msg.text:
+            elif "@.Aked " in msg.text:
 	      if wait["tag"] == True:
 		resp = ("《《AUTO RESPON》》\n")
-                jawab = ("Jgn Tag Si Giananda!!","Berisik jgn tag si Giananda")
+                jawab = ("dia sibuk!!","pc aja kalo begitu")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,resp + jawaban)
 
 	    elif "@"+cl.getProfile().displayName in msg.text:
 	      if wait["tag"] == True:
                 resp = ("《《AUTO RESPON》》\n")
-                jawab = ("bacot lo anjing","gue lagi coli")
+                jawab = ("bacot lo anjing","gue lagi coli","ada apa si ngtag","pc aja")
 		jawabam = random.choice(jawab)
                 cl.sendText(msg.to,resp + jawabam)
 
@@ -2178,9 +2184,15 @@ def bot(op):
 		cl.sendText(msg.to,"/join")
 
             elif msg.text in ["hi"]:
-                cl.sendText(msg.to,"Hi 􀜁􀅔Har Har􏿿")
-                cl.sendText(msg.to,"follow IG saya 􀜁􀅔Har Har􏿿")
-                cl.sendText(msg.to,"instagram.com/dekaprabowoo 􀜁􀅔Har Har􏿿")
+                cl.sendText(msg.to,"Hi, Iya")
+                cl.sendText(msg.to,"Mending Follow Admin")
+                cl.sendText(msg.to,"instagram.com/dekaprabowoo")
+
+            elif msg.text in ["Kam","kam"]:
+                cl.sendText(msg.to,"Selamat Datang Ya Di Grup")
+                cl.sendText(msg.to,"Jangan Nakal dan Jangan Spam")
+                cl.sendText(msg.to,"Semoga Betah..")
+
 
 #-----------------------------------------------
 
@@ -2216,7 +2228,7 @@ def bot(op):
 		start = time.time()
 		cl.sendText(msg.to, "Tunggu..")
                 elapsed_time = time.time() - start
-		cl.sendText(msg.to, "%sseconds" % (elapsed_time))
+		cl.sendText(msg.to, "%s /Detik" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
 
       #-------------Fungsi Banned Send Contact Start------------------#
