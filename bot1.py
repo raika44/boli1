@@ -23,7 +23,6 @@ cl.loginResult()
 print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
 helpMessage ="""
 ╔═══════ M.E.N.U ════════
 ╠➩Apakah <teks> (seperti kerang ajaib)
@@ -199,6 +198,12 @@ mybackup = cl.getProfile()
 mybackup.displayName = contact.displayName
 mybackup.statusMessage = contact.statusMessage
 mybackup.pictureStatus = contact.pictureStatus
+setTime = {}
+setTime = wait2['setTime']
+
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
@@ -227,7 +232,6 @@ def waktu(secs):
     mins, secs = divmod(secs,60)
     hours, mins = divmod(mins,60)
     return '%02d Jam %02d Menit %02d Detik' % (hours, mins, secs)
-
 #-------------------
 
 def bot(op):
@@ -264,13 +268,16 @@ def bot(op):
 	    if op.param3 in Bots:
 		if wait["autojoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
-		    cl.sendText(op.param1, "Makasih udah undang saya ^_^")
+		    cl.sendText(op.param1, "Terimakasih ＼(^o^)／\nSilahkan ketik /help.")
+		    cl.sendText(op.param1, "Creator:\n=> Giananda")
 		    print "Bot join grup"
 #------Cancel Invite User Finish------##
         if op.type == 13:
             if op.param3 in Bots:
                 if op.param2 in admin:
                     cl.acceptGroupInvitation(op.param1)
+                    cl.sendText(op.param1, "Terimakasih ＼(^o^)／\nSilahkan ketik /help.")
+                    cl.sendText(op.param1, "Creator:\n=> Giananda")
                     print "Bot join grup"
 
 
@@ -287,14 +294,14 @@ def bot(op):
                     group = cl.getGroup(op.param1)
 		    cb = Message()
                     cb.to = op.param1
-                    cb.text = cl.getContact(op.param2).displayName + "\n\nWelcome Di : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
+                    cb.text = cl.getContact(op.param2).displayName + "\n\nWelcome di Grup : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
                     cl.sendMessage(cb)
 
 	if op.type == 15:
 	   if wait["Byemessage"] == True:
 	    if op.param2 in Bots:
 		return
-	    cl.sendText(op.param1, "Bah..Semoga Meninggal. Haha")
+	    cl.sendText(op.param1, "Bah Dia Pengen Ke Surga.. Wkwk")
 	    print "MemberLeft"
 
 #------------------------------------------------------
@@ -334,7 +341,7 @@ def bot(op):
 		print ("\n\nRECEIVE_MESSAGE\n\n")
 		return
 
-        if op.type == 25:
+        if op.type == 26:
 	    msg = op.message
 
             if msg.toType == 1:
@@ -1182,109 +1189,10 @@ def bot(op):
 
 
 
-#-------------------------------------------------
-            elif msg.text in ["Mimic on","mimic on"]:
-                    if wait3["copy"] == True:
-                        if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"Already on")
-                        else:
-                            cl.sendText(msg.to,"Mimic On")
-                    else:
-                    	wait3["copy"] = True
-                    	if wait["lang"] == "JP":
-                    		cl.sendText(msg.to,"Mimic On")
-                        else:
-    	                	cl.sendText(msg.to,"Already on")
-#--------------------------------------------------
-            elif msg.text in ["Mimic off","mimic:off"]:
-                    if wait3["copy"] == False:
-                        if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"Already on")
-                        else:
-                            cl.sendText(msg.to,"Mimic Off")
-                    else:
-                    	wait3["copy"] = False
-                    	if wait["lang"] == "JP":
-                    		cl.sendText(msg.to,"Mimic Off")
-                        else:
-	                    	cl.sendText(msg.to,"Already on")
-            elif msg.text in ["Target list"]:
-                        if wait3["target"] == {}:
-                            cl.sendText(msg.to,"nothing")
-                        else:
-                            mc = "Target mimic user\n"
-                            for mi_d in wait3["target"]:
-                                mc += "✔️ "+cl.getContact(mi_d).displayName + "\n"
-                            cl.sendText(msg.to,mc)
-            elif "Mimic target " in msg.text:
-                        if wait3["copy"] == True:
-                            siapa = msg.text.replace("Mimic target ","")
-                            if siapa.rstrip(' ') == "me":
-                                wait3["copy2"] = "me"
-                                cl.sendText(msg.to,"Mimic change to me")
-                            elif siapa.rstrip(' ') == "target":
-                                wait3["copy2"] = "target"
-                                cl.sendText(msg.to,"Mimic change to target")
-                            else:
-                                cl.sendText(msg.to,"I dont know")
-            elif "Target @" in msg.text:
-                        target = msg.text.replace("Target @","")
-                        gc = cl.getGroup(msg.to)
-                        targets = []
-                        for member in gc.members:
-                            if member.displayName == target.rstrip(' '):
-                                targets.append(member.mid)
-                        if targets == []:
-                            cl.sendText(msg.to, "User not found")
-                        else:
-                            for t in targets:
-                                wait3["target"][t] = True
-                            cl.sendText(msg.to,"Target added")
-            elif "Del target @" in msg.text:
-                        target = msg.text.replace("Del target @","")
-                        gc = cl.getGroup(msg.to)
-                        targets = []
-                        for member in gc.members:
-                            if member.displayName == target.rstrip(' '):
-                                targets.append(member.mid)
-                        if targets == []:
-                            cl.sendText(msg.to, "User not found")
-                        else:
-                            for t in targets:
-                                del wait3["target"][t]
-                            cl.sendText(msg.to,"Target deleted")
-#-------------------------------------------------
 
 
 
 
-            elif "Mycopy @" in msg.text:
-                if msg.toType == 2:
-                    if msg.from_ in admin:
-                        print "[COPY] Ok"
-                        _name = msg.text.replace("Mycopy @","")
-                        _nametarget = _name.rstrip('  ')
-                        gs = cl.getGroup(msg.to)
-                        targets = []
-                        for g in gs.members:
-                            if _nametarget == g.displayName:
-                                targets.append(g.mid)
-                        if targets == []:
-                            cl.sendText(msg.to, "Tidak Ada Target Copy")
-                        else:
-                            for target in targets:
-                                try:
-                                    cl.cloneContactProfile(target)
-                                    cl.sendText(msg.to, "Sukses Copy Profile")
-                                except Exception as e:
-                                    print e
-            elif msg.text in ["Mybackup"]:
-                try:
-                    cl.updateDisplayPicture(mybackup.pictureStatus)
-                    cl.updateProfile(mybackup)
-                    cl.sendText(msg.to, "Backup Sukses Bosqu")
-                except Exception as e:
-                    cl.sendText(msg.to, str (e))
 
 
 
@@ -1411,7 +1319,7 @@ def bot(op):
                  cl.sendAudio(msg.to, 'tts.mp3')
 
 	    elif msg.text in ["malam","Malam"]:
-		 sapa = ("オハイオニイちゃんおにちゃんガンバッゃんおにちテクダサイネ")
+		 sapa = ("Malam Semua Para Jomblo")
                  tts = gTTS(sapa, lang='ja', slow=False)
                  tts.save('tts.mp3')
                  cl.sendAudio(msg.to, 'tts.mp3')
@@ -1734,18 +1642,17 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Already off")
 #-----------------------------[Command]-----------------------------#
-            elif "@.Aked" in msg.text:
+            elif "@ই͜͜͡☬Giananda " in msg.text:
 	      if wait["tag"] == True:
 		resp = ("《《AUTO RESPON》》\n")
-                jawab = ("dia sibuk!!","pc aja kalo begitu")
+                jawab = ("Jgn Tag Si Giananda!!","Berisik jgn tag si Giananda")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,resp + jawaban)
-
 
 	    elif "@"+cl.getProfile().displayName in msg.text:
 	      if wait["tag"] == True:
                 resp = ("《《AUTO RESPON》》\n")
-                jawab = ("bacot lo anjing","gue lagi coli","ada apa si ngtag","pc aja")
+                jawab = ("kenapa si ","iya gue ganteng")
 		jawabam = random.choice(jawab)
                 cl.sendText(msg.to,resp + jawabam)
 
@@ -1913,7 +1820,7 @@ def bot(op):
                 cl.sendMessage(msg)
 #----------------
             elif "Mycontact" in msg.text:
-                mid = cl.getContact(msg.from_)
+                mmid = cl.getContact(msg.from_)
                 msg.contentType = 13
                 msg.contentMetadata = {"mid": msg.from_}
                 cl.sendMessage(msg)
@@ -1943,6 +1850,112 @@ def bot(op):
 
 
 
+#-------------------------------------------------
+            elif msg.text in ["Mimic on","mimic on"]:
+                    if wait3["copy"] == True:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Already on")
+                        else:
+                            cl.sendText(msg.to,"Mimic On")
+                    else:
+                    	wait3["copy"] = True
+                    	if wait["lang"] == "JP":
+                    		cl.sendText(msg.to,"Mimic On")
+                        else:
+    	                	cl.sendText(msg.to,"Already on")
+#--------------------------------------------------
+            elif msg.text in ["Mimic off","mimic:off"]:
+                    if wait3["copy"] == False:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Already on")
+                        else:
+                            cl.sendText(msg.to,"Mimic Off")
+                    else:
+                    	wait3["copy"] = False
+                    	if wait["lang"] == "JP":
+                    		cl.sendText(msg.to,"Mimic Off")
+                        else:
+	                    	cl.sendText(msg.to,"Already on")
+            elif msg.text in ["Target list"]:
+                        if wait3["target"] == {}:
+                            cl.sendText(msg.to,"nothing")
+                        else:
+                            mc = "Target mimic user\n"
+                            for mi_d in wait3["target"]:
+                                mc += "✔️ "+cl.getContact(mi_d).displayName + "\n"
+                            cl.sendText(msg.to,mc)
+            elif "Mimic target " in msg.text:
+                        if wait3["copy"] == True:
+                            siapa = msg.text.replace("Mimic target ","")
+                            if siapa.rstrip(' ') == "me":
+                                wait3["copy2"] = "me"
+                                cl.sendText(msg.to,"Mimic change to me")
+                            elif siapa.rstrip(' ') == "target":
+                                wait3["copy2"] = "target"
+                                cl.sendText(msg.to,"Mimic change to target")
+                            else:
+                                cl.sendText(msg.to,"I dont know")
+            elif "Target @" in msg.text:
+                        target = msg.text.replace("Target @","")
+                        gc = cl.getGroup(msg.to)
+                        targets = []
+                        for member in gc.members:
+                            if member.displayName == target.rstrip(' '):
+                                targets.append(member.mid)
+                        if targets == []:
+                            cl.sendText(msg.to, "User not found")
+                        else:
+                            for t in targets:
+                                wait3["target"][t] = True
+                            cl.sendText(msg.to,"Target added")
+            elif "Del target @" in msg.text:
+                        target = msg.text.replace("Del target @","")
+                        gc = cl.getGroup(msg.to)
+                        targets = []
+                        for member in gc.members:
+                            if member.displayName == target.rstrip(' '):
+                                targets.append(member.mid)
+                        if targets == []:
+                            cl.sendText(msg.to, "User not found")
+                        else:
+                            for t in targets:
+                                del wait3["target"][t]
+                            cl.sendText(msg.to,"Target deleted")
+#-------------------------------------------------
+
+
+
+
+            elif "Mycopy @" in msg.text:
+                if msg.toType == 2:
+                    if msg.from_ in admin:
+                        print "[COPY] Ok"
+                        _name = msg.text.replace("Mycopy @","")
+                        _nametarget = _name.rstrip('  ')
+                        gs = cl.getGroup(msg.to)
+                        targets = []
+                        for g in gs.members:
+                            if _nametarget == g.displayName:
+                                targets.append(g.mid)
+                        if targets == []:
+                            cl.sendText(msg.to, "Tidak Ada Target Copy")
+                        else:
+                            for target in targets:
+                                try:
+                                    cl.cloneContactProfile(target)
+                                    cl.sendText(msg.to, "Sukses Copy Profile")
+                                except Exception as e:
+                                    print e
+            elif msg.text in ["Mybackup"]:
+                try:
+                    cl.updateDisplayPicture(mybackup.pictureStatus)
+                    cl.updateProfile(mybackup)
+                    cl.sendText(msg.to, "Backup Sukses Bosqu")
+                except Exception as e:
+                    cl.sendText(msg.to, str (e))
+
+
+
 
 
 
@@ -1962,6 +1975,7 @@ def bot(op):
                 cl.sendText(msg.to,"Vid Has Ben Set To")
             elif msg.text in [".vid","Vid"]:
                 cl.sendVideoWithURL(msg.to,wait["vid"])
+
 
 
 
@@ -2003,7 +2017,7 @@ def bot(op):
 	      if msg.from_ in admin:
 		bctxt = msg.text.replace("Gbc ", "")
 		bc = ("《《BROAD CAST》》\n_________________________________\n")
-		cb = ("\n\n_________________________________\nBot creator:\n=> .Aked")
+		cb = ("\n\n_________________________________\nBot creator:\n=> Kevin")
     		n = cl.getGroupIdsJoined()
     	        for manusia in n:
 	            cl.sendText(manusia,bc +  bctxt + cb)
@@ -2190,7 +2204,7 @@ def bot(op):
             elif msg.text in ["Killban"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
-                    group = cl.getGroup(msg.to)
+                    group = ki.getGroup(msg.to)
                     gMembMids = [contact.mid for contact in group.members]
                     matched_list = []
                     for tag in wait["blacklist"]:
@@ -2320,22 +2334,16 @@ def bot(op):
 		cl.sendText(msg.to,"/join")
 
             elif msg.text in ["hi"]:
-                cl.sendText(msg.to,"Hi, Iya")
-                cl.sendText(msg.to,"Mending Follow Admin")
-                cl.sendText(msg.to,"instagram.com/dekaprabowoo")
-
-            elif msg.text in ["Kam","kam"]:
-                cl.sendText(msg.to,"Selamat Datang Ya Di Grup")
-                cl.sendText(msg.to,"Jangan Nakal dan Jangan Spam")
-                cl.sendText(msg.to,"Semoga Betah..")
-
+                cl.sendText(msg.to,"Hi 􀜁􀅔Har Har􏿿")
+                cl.sendText(msg.to,"follow IG saya 􀜁􀅔Har Har􏿿")
+                cl.sendText(msg.to,"instagram.com/gianandaal 􀜁􀅔Har Har􏿿")
 
 #-----------------------------------------------
 
             elif msg.text in ["/unicode1"]:
                 cl.sendText(msg.to,"44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.55.44.44.44.44.44.44.44.4444.44.44.4.44.4.44.44.4.440.440.004444.4444.44.33.")
             elif msg.text in ["/creator"]:
-                cl.sendText(msg.to,"==========BotCreator==========\n\nĜ̵͚͈̠̟͎̝͑̎̎̐̀̃͐Ḭ̸̛̞̣̠͓͖͚̽̏̉̍͌͒̅̈́̋̕͠A̴̢̨͕̳͕̲̪͙̰͍̯̲̿̀̅͒̌̌̉̆̏͠ͅN̷̨̨̫̞̭͔̖̳͍͔̗̰͚̺̋̿͛͒̏͜͝Ȁ̵͖̲̥̜̣̞̝̔̀̽̀̆́̐͐́̚͘ͅN̷̨̨̫̞̭͔̖̳͍͔̗̰͚̺̋̿͛͒̏͜͝D̴̯͍̝̯͔̤̟̭̦͓͖̺̣̟͚́͗̈́͛̋̈́̓̄̄͘͜Ȁ̵͖̲̥̜̣̞̝̔̀̽̀̆́̐͐́̚͘ͅ\n==>'Instagram.com/dekaprabowoo'<==\nWajib follow􀜁􀅔Har Har􏿿")
+                cl.sendText(msg.to,"==========BotCreator==========\n\nĜ̵͚͈̠̟͎̝͑̎̎̐̀̃͐Ḭ̸̛̞̣̠͓͖͚̽̏̉̍͌͒̅̈́̋̕͠A̴̢̨͕̳͕̲̪͙̰͍̯̲̿̀̅͒̌̌̉̆̏͠ͅN̷̨̨̫̞̭͔̖̳͍͔̗̰͚̺̋̿͛͒̏͜͝Ȁ̵͖̲̥̜̣̞̝̔̀̽̀̆́̐͐́̚͘ͅN̷̨̨̫̞̭͔̖̳͍͔̗̰͚̺̋̿͛͒̏͜͝D̴̯͍̝̯͔̤̟̭̦͓͖̺̣̟͚́͗̈́͛̋̈́̓̄̄͘͜Ȁ̵͖̲̥̜̣̞̝̔̀̽̀̆́̐͐́̚͘ͅ\n==>'Instagram.com/gianandaal'<==\nWajib follow􀜁􀅔Har Har􏿿")
 
             elif msg.text in ["bobo ah","Bobo dulu ah"]:
                 cl.sendText(msg.to,"Have a nice dream  􀜁􀅔Har Har􏿿")
@@ -2348,7 +2356,7 @@ def bot(op):
 
       #-------------Fungsi Balesan Respon Start---------------------#
             elif msg.text in ["Ini Apa","ini apa","Apaan Ini","apaan ini"]:
-                cl.sendText(msg.to,"Ya gitu deh intinya 􀨁􀅴questioning􏿿")
+                cl.sendText(msg.to,"Ya gitu deh")
 
       #-------------Fungsi Balesan Respon Finish---------------------#
 	#-------------Fungsi Speedbot Start---------------------#
