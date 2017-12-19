@@ -1743,12 +1743,12 @@ def bot(op):
 
 	      if wait["tag"] == True:
 	         if msg.toType == 0:
-	           if msg.from_ not in friend:
-	        contact = cl.getContact(msg.from_)
+	           if msg.to not in friend:
+	        contact = cl.getContact(msg.to)
 	        cName = contact.displayName
 	        wk = [cName + ", Ada Apa?",cName + ", Ngapain Sii?",cName + ", Mending Pc"]
 		jawabam = random.choice(wk)
-                cl.sendText(msg.from_,jawabam)
+                cl.sendText(msg.to,jawabam)
 
 	    elif msg.text in ["Invite"]:
                 wait["winvite"] = True
