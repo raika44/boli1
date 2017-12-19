@@ -130,8 +130,8 @@ KAC=[cl]
 mid=cl.getProfile().mid
 
 Bots=[mid, "ube187443474747c3ec352e7efeb48c1b"]
-admin=["ube187443474747c3ec352e7efeb48c1b"]
-staff=["ube187443474747c3ec352e7efeb48c1b"]
+admin=["ube187443474747c3ec352e7efeb48c1b","ua3db06f09cca59c24623cb4b6518d1cd"]
+staff=["ube187443474747c3ec352e7efeb48c1b","ua3db06f09cca59c24623cb4b6518d1cd"]
 wait = {
     'contact':False,
     'autoJoin':True,
