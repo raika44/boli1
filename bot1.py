@@ -141,7 +141,7 @@ Bots=[mid,"ube187443474747c3ec352e7efeb48c1b"]
 admin=["ube187443474747c3ec352e7efeb48c1b","ua3db06f09cca59c24623cb4b6518d1cd"]
 staff=["ube187443474747c3ec352e7efeb48c1b","ua3db06f09cca59c24623cb4b6518d1cd"]
 wait = {
-    'contact':False,
+    'contact':True,
     'autoJoin':True,
     'autoCancel':{"on":False,"members":1},
     'leaveRoom':True,
@@ -181,7 +181,7 @@ wait2 = {
     }
 
 wait3 = {
-    "copy":False,
+    "copy":True,
     "copy2":"target",
     "target":{}
     }
