@@ -1744,8 +1744,8 @@ def bot(op):
 	      if wait["tag"] == True:
 	         if msg.toType == 0:
 	           if msg.to not in friend:
-	        cName = contact.displayName
-	        wk = [cName + ", Ada Apa?",cName + ", Ngapain Sii?",cName + ", Mending Pc"]
+	        elif "@"+cl.getProfile().displayName in msg.text:
+	        wk = ("bacot lo anjing","gue lagi coli","ada apa si ngtag","pc aja")
 		jawabam = random.choice(wk)
                 cl.sendText(msg.to,jawabam)
 
