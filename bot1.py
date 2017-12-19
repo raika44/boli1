@@ -124,6 +124,14 @@ steal ="""
 ╠➩Mycover = cover kalian
 ╠➩Mycontact = kontak kalian
 ╚═══════ M.E.N.U ════════
+╔═══════ Mimic ════════
+╠➩Mimic on/off
+╠➩Target @
+╠➩Target del @
+╠➩Target list
+╠➩Mycopy @
+╠➩Mybackup
+╚═══════ Mimic ════════
 """
 
 KAC=[cl]
@@ -259,7 +267,7 @@ def bot(op):
                     group = cl.getGroup(op.param1)
 		    cb = Message()
                     cb.to = op.param1
-                    cb.text = cl.getContact(op.param2).displayName + " Selamat Datang di Grup : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
+                    cb.text = cl.getContact(op.param2).displayName + "\n\nWelcome di Grup : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
                     cl.sendMessage(cb)
 
 	if op.type == 15:
@@ -1154,10 +1162,109 @@ def bot(op):
 
 
 
+#-------------------------------------------------
+            elif msg.text in ["Mimic on","mimic on"]:
+                    if wait3["copy"] == True:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Already on")
+                        else:
+                            cl.sendText(msg.to,"Mimic On")
+                    else:
+                    	wait3["copy"] = True
+                    	if wait["lang"] == "JP":
+                    		cl.sendText(msg.to,"Mimic On")
+                        else:
+    	                	cl.sendText(msg.to,"Already on")
+#--------------------------------------------------
+            elif msg.text in ["Mimic off","mimic:off"]:
+                    if wait3["copy"] == False:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Already on")
+                        else:
+                            cl.sendText(msg.to,"Mimic Off")
+                    else:
+                    	wait3["copy"] = False
+                    	if wait["lang"] == "JP":
+                    		cl.sendText(msg.to,"Mimic Off")
+                        else:
+	                    	cl.sendText(msg.to,"Already on")
+            elif msg.text in ["Target list"]:
+                        if wait3["target"] == {}:
+                            cl.sendText(msg.to,"nothing")
+                        else:
+                            mc = "Target mimic user\n"
+                            for mi_d in wait3["target"]:
+                                mc += "✔️ "+cl.getContact(mi_d).displayName + "\n"
+                            cl.sendText(msg.to,mc)
+            elif "Mimic target " in msg.text:
+                        if wait3["copy"] == True:
+                            siapa = msg.text.replace("Mimic target ","")
+                            if siapa.rstrip(' ') == "me":
+                                wait3["copy2"] = "me"
+                                cl.sendText(msg.to,"Mimic change to me")
+                            elif siapa.rstrip(' ') == "target":
+                                wait3["copy2"] = "target"
+                                cl.sendText(msg.to,"Mimic change to target")
+                            else:
+                                cl.sendText(msg.to,"I dont know")
+            elif "Target @" in msg.text:
+                        target = msg.text.replace("Target @","")
+                        gc = cl.getGroup(msg.to)
+                        targets = []
+                        for member in gc.members:
+                            if member.displayName == target.rstrip(' '):
+                                targets.append(member.mid)
+                        if targets == []:
+                            cl.sendText(msg.to, "User not found")
+                        else:
+                            for t in targets:
+                                wait3["target"][t] = True
+                            cl.sendText(msg.to,"Target added")
+            elif "Del target @" in msg.text:
+                        target = msg.text.replace("Del target @","")
+                        gc = cl.getGroup(msg.to)
+                        targets = []
+                        for member in gc.members:
+                            if member.displayName == target.rstrip(' '):
+                                targets.append(member.mid)
+                        if targets == []:
+                            cl.sendText(msg.to, "User not found")
+                        else:
+                            for t in targets:
+                                del wait3["target"][t]
+                            cl.sendText(msg.to,"Target deleted")
+#-------------------------------------------------
 
 
 
 
+            elif "Mycopy @" in msg.text:
+                if msg.toType == 2:
+                    if msg.from_ in admin:
+                        print "[COPY] Ok"
+                        _name = msg.text.replace("Mycopy @","")
+                        _nametarget = _name.rstrip('  ')
+                        gs = cl.getGroup(msg.to)
+                        targets = []
+                        for g in gs.members:
+                            if _nametarget == g.displayName:
+                                targets.append(g.mid)
+                        if targets == []:
+                            cl.sendText(msg.to, "Tidak Ada Target Copy")
+                        else:
+                            for target in targets:
+                                try:
+                                    cl.cloneContactProfile(target)
+                                    cl.sendText(msg.to, "Sukses Copy Profile")
+                                except Exception as e:
+                                    print e
+            elif msg.text in ["Mybackup"]:
+                try:
+                    cl.updateDisplayPicture(mybackup.pictureStatus)
+                    cl.updateProfile(mybackup)
+                    cl.sendText(msg.to, "Backup Sukses Bosqu")
+                except Exception as e:
+                    cl.sendText(msg.to, str (e))
 
 
 
