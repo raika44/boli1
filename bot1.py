@@ -1949,6 +1949,16 @@ def bot(op):
                 cl.sendVideoWithURL(msg.to,wait["vid"])
 
 
+	    elif "kev pap" in msg.text:
+                wc = ["http://hoodmemorial.org/wp-content/uploads/2017/07/welcome.jpg"]
+                goblog = ["http://s2.quickmeme.com/img/0e/0e67b457f3c3f47d39003c39a1475bf21538caa7ddd7d2c7dcd5dc890d132b13.jpg"]
+                welcome = random.choice(wc)
+                gblg = random.choice(goblog)
+		gambar = msg.text.replace("kev pap ", "")
+                elif gambar == "welcome":
+                cl.sendImageWithURL(msg.to, welcome)
+                elif gambar == "goblog":
+                cl.sendImageWithURL(msg.to, gblg)
 
 
 #-------------------------------------------------
