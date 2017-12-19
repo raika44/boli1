@@ -1411,7 +1411,7 @@ def bot(op):
                  cl.sendAudio(msg.to, 'tts.mp3')
 
 	    elif msg.text in ["malam","Malam"]:
-		 sapa = ("모든 굿나잇은 잊지 마라")
+		 sapa = ("オハイオニイちゃんおにちゃんガンバッゃんおにちテクダサイネ")
                  tts = gTTS(sapa, lang='ja', slow=False)
                  tts.save('tts.mp3')
                  cl.sendAudio(msg.to, 'tts.mp3')
@@ -1913,7 +1913,7 @@ def bot(op):
                 cl.sendMessage(msg)
 #----------------
             elif "Mycontact" in msg.text:
-                mmid = cl.getContact(msg.from_)
+                mid = cl.getContact(msg.from_)
                 msg.contentType = 13
                 msg.contentMetadata = {"mid": msg.from_}
                 cl.sendMessage(msg)
@@ -2190,7 +2190,7 @@ def bot(op):
             elif msg.text in ["Killban"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
-                    group = ki.getGroup(msg.to)
+                    group = cl.getGroup(msg.to)
                     gMembMids = [contact.mid for contact in group.members]
                     matched_list = []
                     for tag in wait["blacklist"]:
