@@ -287,7 +287,7 @@ def bot(op):
                     group = cl.getGroup(op.param1)
 		    cb = Message()
                     cb.to = op.param1
-                    cb.text = cl.getContact(op.param2).displayName + "\n\nWelcome di Grup : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
+                    cb.text = cl.getContact(op.param2).displayName + "\n\nIya Kamu, Jangan Nakal dan  Jangan Spam.. Ikutin Peraturan Yang Ada Di : " + group.name + "\n\nGrup Creator => " + group.creator.displayName
                     cl.sendMessage(cb)
 
 	if op.type == 15:
@@ -1957,10 +1957,6 @@ def bot(op):
                 welcome = random.choice(wc)
                 gblg = random.choice(goblog)
 		gambar = msg.text.replace("kev pap ", "")
-                if gambar msg.text in ["welcome"]:
-                cl.sendImageWithURL(msg.to, welcome)
-                elif msg.text in ["goblog"]:
-                cl.sendImageWithURL(msg.to, gblg)
 
 
 #-------------------------------------------------
