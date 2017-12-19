@@ -1741,10 +1741,8 @@ def bot(op):
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,resp + jawaban)
 
-	      if wait["tag"] == True:
-	         if msg.toType == 0:
-	           if msg.to not in friend:
 	        elif "@"+cl.getProfile().displayName in msg.text:
+	        if wait["tag"] == True:
 	        wk = ("bacot lo anjing","gue lagi coli","ada apa si ngtag","pc aja")
 		jawabam = random.choice(wk)
                 cl.sendText(msg.to,jawabam)
