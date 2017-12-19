@@ -14,7 +14,7 @@ import tempfile
 class Channel:
     client = None
 
-    host = "gf.line.naver.jp"
+    host = "gd2.line.naver.jp"
     http_query_path = "/S4"
     channel_query_path = "/CH4"
 
