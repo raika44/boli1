@@ -119,7 +119,6 @@ aked2 ="""
 ╠->Midban
 ╠->infogrup
 ╠->grup id
-╠->.fb
 ╠->Spamcontact @
 ╠->Spamtag @
 ╠->Spam
@@ -167,7 +166,7 @@ wait = {
     'autoCancel':{"on":False,"members":1},
     'leaveRoom':True,
     'timeline':False,
-    'autoAdd':True,
+    'autoAdd':False,
     'message':"""Thx for add""",
     "lang":"JP",
     "comment":"",
