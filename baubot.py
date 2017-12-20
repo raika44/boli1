@@ -1,55 +1,36 @@
 # -*- coding: utf-8 -*-
 
-import PUY
-from PUY.lib.curve.ttypes import *
+import Aan
+from Aan.lib.curve.ttypes import *
 from datetime import datetime
-import time, random, sys, ast, re, os, io, json, subprocess, threading, string, codecs, requests, ctypes, urllib, urllib2, urllib3, wikipedia, tempfile
 from bs4 import BeautifulSoup
-from urllib import urlopen
+import time, random, sys, re, os, json, subprocess, threading, glob, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
 import requests
-from io import StringIO
-from threading import Thread
-#from gtts import gTTS
-from googletrans import Translator
-#JANGAN LUPA =>  sudo pip install bs4 => sudo pip install BeautifulSoup => sudo pip install urllib => sudo pip install requests => sudo pip install gTTS
+from gtts import gTTS
+import goslate
+from urllib import urlopen
+import urllib2
+import urllib3
+import tempfile
+import html5lib
 
-cl = PUY.LINE()
-cl.login(qr=True)
+
+cl = Aan.LINE()
+#cl.login(qr=True)
+cl.login(token="EnLCGY0UGbVmH8LGwGGd.O9Sg8jZkwCjgi8TlzrJrZq.Du74Qcc1ZU+i/gqz96vNfWOHs0+W2WriSH2xEWR/H94=")
 cl.loginResult()
 
 print "\n[CIE BERHASIL LOGIN]"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpmsg ="""╠═════════════════
-╠-> google (text)
-╠-> playstore (text)
-╠-> Profileig (username)
-╠-> wikipedia (text)
-╠-> idline (text)
-╠-> ytsearch  (text)
-╠-> Time
-╠-> image (text)
-╠-> runtime
-╠-> Restart
-╠-> lirik (text)
-╠-> Mention
-╠-> setpoint on/off
-╠-> viewlastseen
-╠-> protect on/off
-╠-> qr on/off
-╠-> invite on/off
-╠-> Cancel on/off
-╠-> Simisimi:on/off
-╠-> Read on/off
-╠-> Getinfo @
-╠-> Getcontact @
-╠-> Ulti @
-╠-> speed
-╠-> Friendlist
-╠-> id@en
-╠-> en@id
-╠-> id@jp\n                 「OR」\n╠-> helppro\n╠-> helpself\n╠-> helpset\n╠-> helpgrup\n╠-> helptranslate
+helpmsg ="""
+╔═════════════════
+║    AKED MENU   
+╠═════════════════
+╠✟ aked 1
+╠✟ aked 2
+╠✟ aked translate
 ╚═════════════════"""
 
 helppro ="""
@@ -58,46 +39,54 @@ helppro ="""
 ╠➩ qr on/off
 ╠➩ invite on/off
 ╠➩ cancel on/off
+╠➩ Simisimi:on/off
+╠➩ Read on/off
+╠➩ setpoint on/off
+╠➩ respon on/off
+╠➩ link on
+╠➩ like friend
+╠➩ autoadd on/off
+╠➩ auto leave on/off
+╠➩ autojoin on/off
+╠➩ contact on/off
 ╚═════════════════"""
 
 helpself ="""
 ╠═════════════════
-╠➩Me
-╠➩Myname:
-╠➩Mybio:
-╠➩Mypict
-╠➩Mycover
-╠➩My copy @
-╠➩My backup
-╠➩Getgroup image
-╠➩Getmid @
-╠➩Getprofile @
-╠➩Getinfo @
-╠➩Getname @
-╠➩Getbio @
-╠➩Getpict @
-╠➩Getcover @
-╠➩Mention
-╠➩setpoint on/off
-╠➩viewlastseen
-╠➩Micadd @
-╠➩Micdel @
-╚═════════════════"""
-
-helpset ="""
-╠═════════════════
-╠->contact on/off
-╠->autojoin on/off
-╠->auto leave on/off
-╠->autoadd on/off
-╠->like friend
-╠->link on
-╠->respon on/off
-╠->read on/off
-╠->simisimi on/off
-╚═════════════════"""
-
-helpgrup ="""
+╠➩ Me
+╠➩ Myname:
+╠➩ Mybio:
+╠➩ Mypict
+╠➩ Mycover
+╠➩ My copy @
+╠➩ My backup
+╠➩ Getgroup image
+╠➩ Getmid @
+╠➩ Getprofile @
+╠➩ Getinfo @
+╠➩ Getname @
+╠➩ Getbio @
+╠➩ Getpict @
+╠➩ Getcover @
+╠➩ viewlastseen
+╠➩ Micadd @
+╠➩ Micdel @
+╠➩ google (text)
+╠➩ playstore (text)
+╠➩ Profileig (username)
+╠➩ wikipedia (text)
+╠➩ idline (text)
+╠➩ ytsearch  (text)
+╠➩ Time
+╠➩ image (text)
+╠➩ runtime
+╠➩ Restart
+╠➩ lirik (text)
+╠➩ Mention
+╠➩ Getcontact @
+╠➩ Ulti @
+╠➩ speed
+╠➩ Friendlist
 ╠═════════════════
 ╠->Link on
 ╠->Url
@@ -118,7 +107,8 @@ helpgrup ="""
 ╠->Banlist
 ╠->Contact ban
 ╠->Midban
-╚═════════════════"""
+╚═════════════════
+"""
 
 helptranslate ="""
 ╠═════════════════
@@ -140,7 +130,7 @@ helptranslate ="""
 KAC=[cl]
 mid = cl.getProfile().mid
 Bots=[mid]
-admin=["uac8e3eaf1eb2a55770bf10c3b2357c33"]
+admin=["ube187443474747c3ec352e7efeb48c1b"]
 
 wait = {
     "likeOn":False,
@@ -153,7 +143,7 @@ wait = {
     "spam":{},
     'contact':False,
     'autoJoin':True,
-    'autoCancel':{"on":False,"members":5},
+    'autoCancel':{"on":False,"members":1},
     'leaveRoom':True,
     'timeline':False,
     'autoAdd':True,
@@ -631,17 +621,17 @@ def bot(op):
                     cl.sendText(msg.to,msg.text)
             elif msg.text is None:
                 return
-            elif msg.text.lower() == 'help':
+            elif msg.text.lower() == 'Aked':
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpmsg)
                 else:
                     cl.sendText(msg.to,helpmsg)
-            elif msg.text.lower() == 'help protect':
+            elif msg.text.lower() == 'Aked 1':
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helppro)
                 else:
                     cl.sendText(msg.to,helppro)
-            elif msg.text.lower() == 'help self':
+            elif msg.text.lower() == 'Aked 2':
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpself)
                 else:
@@ -656,7 +646,7 @@ def bot(op):
                     cl.sendText(msg.to,helpset)
                 else:
                     cl.sendText(msg.to,helpset)
-            elif msg.text.lower() == 'help translate':
+            elif msg.text.lower() == 'Aked translate':
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helptranslate)
                 else:
@@ -667,17 +657,17 @@ def bot(op):
             #    elapsed_time = time.time() - start
             #    cl.sendText(msg.to, "%sseconds" % (elapsed_time))
                 
-            elif msg.text == ".Speed":
+            elif msg.text == "Sp":
                     cl.sendText(msg.to,"「Come Here」")
                     start = time.time()
                     for i in range(3000):
                         1+1
                     elsp = time.time() - start
-                    cl.sendText(msg.to,"%s/Detikี" % (elsp))    
+                    cl.sendText(msg.to,"%s /Detikี" % (elsp))    
                 
             elif msg.text.lower() == 'crash':
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': "u1f41296217e740650e0448b96851a3e2',"}
+                msg.contentMetadata = {'mid': "ube187443474747c3ec352e7efeb48c1b',"}
                 cl.sendMessage(msg)
             elif msg.text.lower() == 'me':
                 msg.contentType = 13
@@ -932,7 +922,7 @@ def bot(op):
                 cl.sendMessage(msg)
             elif cms(msg.text,["creator","Creator"]):
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': "ub14f769cdf42d8c8a618ebe91ac2c8c7"}
+                msg.contentMetadata = {'mid': "ube187443474747c3ec352e7efeb48c1b"}
                 cl.sendMessage(msg)
                 kk.sendMessage(msg)
             elif msg.text.lower() == 'autoadd on':
@@ -2480,7 +2470,7 @@ def bot(op):
 
             elif cms(msg.text,["/creator","Creator"]):
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': "ub14f769cdf42d8c8a618ebe91ac2c8c7"}
+                msg.contentMetadata = {'mid': "ube187443474747c3ec352e7efeb48c1b"}
                 cl.sendMessage(msg)
 
             #elif msg.text in ["puy"]:
@@ -2757,7 +2747,7 @@ def bot(op):
                 for g in gs.members:
                     if _nametarget == g.displayName:
                        msg.contentType = 13
-                       msg.contentMetadata = {'mid': "ua7fb5762d5066629323d113e1266e8ca',"}
+                       msg.contentMetadata = {'mid': "ube187443474747c3ec352e7efeb48c1b',"}
                        cl.sendText(g.mid,"Spam")
                        cl.sendMessage(msg)
                        cl.sendMessage(msg)
@@ -2988,7 +2978,7 @@ def bot(op):
                 	
             elif msg.text in ["Attack"]:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': "ua7fb5762d5066629323d113e1266e8ca',"}
+                msg.contentMetadata = {'mid': "ube187443474747c3ec352e7efeb48c1b',"}
                 cl.sendMessage(msg)
                 cl.sendMessage(msg)
                 cl.sendMessage(msg)
@@ -3006,7 +2996,7 @@ def bot(op):
                 
             elif msg.text.lower() == '.....':
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': "ua7fb5762d5066629323d113e1266e8ca',"}
+                msg.contentMetadata = {'mid': "ube187443474747c3ec352e7efeb48c1b',"}
                 cl.sendMessage(msg)    
 #=================================PUY SCRIPT FINISHED =============================================#
             
