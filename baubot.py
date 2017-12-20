@@ -17,7 +17,7 @@ import html5lib
 
 cl = Aan.LINE()
 #cl.login(qr=True)
-cl.login(token="EnLCGY0UGbVmH8LGwGGd.O9Sg8jZkwCjgi8TlzrJrZq.Du74Qcc1ZU+i/gqz96vNfWOHs0+W2WriSH2xEWR/H94=")
+cl.login(token="EoSlrq9d3zpMpkzFCxTb.VHH0q0Dhr8pSns5/+RsmgW.zx7C2I7cFTYeV30zT8LBfTuMe9TgpkBPxl9JKYZDt4o=")
 cl.loginResult()
 
 print "\n[CIE BERHASIL LOGIN]"
@@ -85,8 +85,18 @@ helpself ="""
 ╠➩ Mention
 ╠➩ Getcontact @
 ╠➩ Ulti @
-╠➩ speed
+╠➩ Sp
 ╠➩ Friendlist
+╠➩ Setimage: (link)
+╠➩ Pap
+╠➩ Setvideo: (link)
+╠➩ Papvideo
+╠➩ Fancytext: (text)
+╠➩ Youtubemp4 (text)
+╠➩ Lirik (text)
+╠➩ Music (text)
+╠➩ Checkdate (tgl-bln-th)
+╠➩ Kalender
 ╠═════════════════
 ╠->Link on
 ╠->Url
@@ -107,6 +117,16 @@ helpself ="""
 ╠->Banlist
 ╠->Contact ban
 ╠->Midban
+╠->infogrup
+╠->grup id
+╠->.fb
+╠->Spamcontact @
+╠->Spamtag @
+╠->Spam
+╠->invite:gcreator
+╠->Gcreator:kick
+╠->Invite
+╠->status
 ╚═════════════════
 """
 
@@ -125,7 +145,8 @@ helptranslate ="""
 ╠->Say-id
 ╠->Say-en
 ╠->Say-jp
-╚═════════════════"""
+╚═════════════════
+"""
 
 KAC=[cl]
 mid = cl.getProfile().mid
