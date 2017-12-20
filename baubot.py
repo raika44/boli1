@@ -33,7 +33,7 @@ helpMessage ="""
 ╠✟ Aked translate
 ╚═════════════════"""
 
-say ="""
+aked1 ="""
 ╠═════════════════
 ╠➩ protect on/off
 ╠➩ qr on/off
@@ -51,7 +51,7 @@ say ="""
 ╠➩ contact on/off
 ╚═════════════════"""
 
-steal ="""
+aked2 ="""
 ╠═════════════════
 ╠➩ Me
 ╠➩ Myname:
@@ -85,7 +85,7 @@ steal ="""
 ╠➩ Mention
 ╠➩ Getcontact @
 ╠➩ Ulti @
-╠➩ Sp
+╠➩ aked speed
 ╠➩ Friendlist
 ╠➩ Setimage: (link)
 ╠➩ Pap
@@ -130,7 +130,7 @@ steal ="""
 ╚═════════════════
 """
 
-hadiah ="""
+aked3 ="""
 ╠═════════════════
 ╠->Id@en
 ╠->En@id
@@ -642,17 +642,6 @@ def bot(op):
                     cl.sendText(msg.to,msg.text)
             elif msg.text is None:
                 return
-	    elif msg.text in ["Aked 1"]:
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,say)
-
-	    elif msg.text in ["Aked 2"]:
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,steal)
-
-	    elif msg.text in ["Aked translate"]:
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,hadiah)
 
             elif msg.text in ["Ked Menu","Aked"]:
                 if wait["lang"] == "JP":
@@ -660,13 +649,25 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,helpt)
 
+	    elif msg.text in ["Aked 1"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,aked1)
+
+	    elif msg.text in ["Aked 2"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,aked2)
+
+	    elif msg.text in ["Aked translate"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,aked3)
+
             #elif msg.text in ["Sp","Speed","speed"]:
             #    start = time.time()
             #    cl.sendText(msg.to, "「Come Here」")
             #    elapsed_time = time.time() - start
             #    cl.sendText(msg.to, "%sseconds" % (elapsed_time))
                 
-            elif msg.text == "Sp":
+            elif msg.text == "aked speed":
                     cl.sendText(msg.to,"「Come Here」")
                     start = time.time()
                     for i in range(3000):
