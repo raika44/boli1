@@ -24,16 +24,16 @@ print "\n[CIE BERHASIL LOGIN]"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpmsg ="""
+helpMessage ="""
 ╔═════════════════
 ║    AKED MENU   
 ╠═════════════════
-╠✟ aked 1
-╠✟ aked 2
-╠✟ aked translate
+╠✟ Aked 1
+╠✟ Aked 2
+╠✟ Aked translate
 ╚═════════════════"""
 
-helppro ="""
+say ="""
 ╠═════════════════
 ╠➩ protect on/off
 ╠➩ qr on/off
@@ -51,7 +51,7 @@ helppro ="""
 ╠➩ contact on/off
 ╚═════════════════"""
 
-helpself ="""
+steal ="""
 ╠═════════════════
 ╠➩ Me
 ╠➩ Myname:
@@ -130,7 +130,7 @@ helpself ="""
 ╚═════════════════
 """
 
-helptranslate ="""
+hadiah ="""
 ╠═════════════════
 ╠->Id@en
 ╠->En@id
@@ -636,42 +636,30 @@ def bot(op):
                 if wait["timeline"] == True:
                     msg.contentType = 0
                     if wait["lang"] == "JP":
-                        msg.text = "menempatkan URL\n" + msg.contentMetadata["postEndUrl"]
+                        msg.text = "post URL\n" + msg.contentMetadata["postEndUrl"]
                     else:
-                        msg.text = msg.contentMetadata["postEndUrl"]
+                        msg.text = "URLâ†’\n" + msg.contentMetadata["postEndUrl"]
                     cl.sendText(msg.to,msg.text)
             elif msg.text is None:
                 return
-            elif msg.text.lower() == 'Aked':
+	    elif msg.text in ["Aked 1"]:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,helpmsg)
-                else:
-                    cl.sendText(msg.to,helpmsg)
-            elif msg.text.lower() == 'Aked 1':
+                    cl.sendText(msg.to,say)
+
+	    elif msg.text in ["Aked 2"]:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,helppro)
-                else:
-                    cl.sendText(msg.to,helppro)
-            elif msg.text.lower() == 'Aked 2':
+                    cl.sendText(msg.to,steal)
+
+	    elif msg.text in ["Aked translate"]:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,helpself)
-                else:
-                    cl.sendText(msg.to,helpself)
-            elif msg.text.lower() == 'help grup':
+                    cl.sendText(msg.to,hadiah)
+
+            elif msg.text in ["Ked Menu","Aked"]:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,helpgrup)
+                    cl.sendText(msg.to,helpMessage)
                 else:
-                    cl.sendText(msg.to,helpgrup)
-            elif msg.text.lower() == 'help set':
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,helpset)
-                else:
-                    cl.sendText(msg.to,helpset)
-            elif msg.text.lower() == 'Aked translate':
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,helptranslate)
-                else:
-                    cl.sendText(msg.to,helptranslate)
+                    cl.sendText(msg.to,helpt)
+
             #elif msg.text in ["Sp","Speed","speed"]:
             #    start = time.time()
             #    cl.sendText(msg.to, "「Come Here」")
