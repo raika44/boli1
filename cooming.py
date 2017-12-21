@@ -20,38 +20,34 @@ cl.login(token="EoSlrq9d3zpMpkzFCxTb.VHH0q0Dhr8pSns5/+RsmgW.zx7C2I7cFTYeV30zT8LB
 cl.loginResult()
 
 c2 = Aan.LINE()
-c2.login(token="TOKEN")
+c2.login(token="EoSlrq9d3zpMpkzFCxTb.VHH0q0Dhr8pSns5/+RsmgW.zx7C2I7cFTYeV30zT8LBfTuMe9TgpkBPxl9JKYZDt4o=")
 c2.loginResult()
 
 c3 = Aan.LINE()
-c3.login(token="TOKEN")
+c3.login(token="EoSlrq9d3zpMpkzFCxTb.VHH0q0Dhr8pSns5/+RsmgW.zx7C2I7cFTYeV30zT8LBfTuMe9TgpkBPxl9JKYZDt4o=")
 c3.loginResult()
 
 c4 = Aan.LINE()
-c4.login(token="TOKEN")
+c4.login(token="EoSlrq9d3zpMpkzFCxTb.VHH0q0Dhr8pSns5/+RsmgW.zx7C2I7cFTYeV30zT8LBfTuMe9TgpkBPxl9JKYZDt4o=")
 c4.loginResult()
 
 c5 = Aan.LINE()
-c5.login(token="TOKEN")
+c5.login(token="EoSlrq9d3zpMpkzFCxTb.VHH0q0Dhr8pSns5/+RsmgW.zx7C2I7cFTYeV30zT8LBfTuMe9TgpkBPxl9JKYZDt4o=")
 c5.loginResult()
 
 c6 = Aan.LINE()
-c6.login(token="TOKEN")
+c6.login(token="EoSlrq9d3zpMpkzFCxTb.VHH0q0Dhr8pSns5/+RsmgW.zx7C2I7cFTYeV30zT8LBfTuMe9TgpkBPxl9JKYZDt4o=")
 c6.loginResult()
 
 print "_________________________________"
-print "===[Lips BOT Login Success]==="
-print "__________LipsD3BL3NK_________"
+print "=======[BOT Login Success]======="
+print "_________________________________"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 helpMessage ="""
-_♛______.-—◈◆■■■◆◈—-.______♛_
-███■__ ●•° WELCOME °•● __■███
-____.-◇●•°°°°°°°°°°°°°°°°°°°°•●◇-._____
-██■●•°`Ini Adalah Lips BOT`°•●■██
-ⓓⓔⓑ–-…_______/L\______…-–ⓔⓝⓚ
-
+╔══════════════════════
+║ ✟.M.E.N.U   H.E.L.P✟   
 ╔══════════════════════
 ╠ ◆ Turn on/off - 「Command on/off」
 ╠ ◆ Command -「Look Command」
@@ -66,13 +62,9 @@ ____.-◇●•°°°°°°°°°°°°°°°°°°°°•●◇-._____
 ╚══════════════════════
 """
 command ="""
-_.♟.______-—◈◆■■■◆◈—-______.♟._
-███■__●•° COMMAND °•●__■███
-____.-◇●•°°°°°°°°°°°°°°°°°°°°•●◇-._____
-██■●•°`Ini Adalah Lips BOT`°•●■██
-ⓓⓔⓑ–-…_______/L\______…-–ⓔⓝⓚ
-
-╔═════════════════════
+╔══════════════════════
+║  ✟ C.O.M.M.A.N.D ✟   
+╔══════════════════════
 ╠ ♟ Me
 ╠ ♟ Mymid
 ╠ ♟ Broadcast:
@@ -175,10 +167,7 @@ Lips D3BL3NK BOT
  """
 
  private = """
- _☯.______.-—◈◆■■■◆◈—-.______.☯_
-███■__☣●•° PRIVATE °•●☣__■███
-____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
-""""""-■_______Lips_BOT________■-""""""
+║  ✟ P.R.I.V.A.T.E ✟   ║
 
 ╔══════════════════════
 ╠═══ [ Admin Add/Dell/List ] ════
@@ -207,11 +196,8 @@ ____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
  """
  
 plotek = """
-_♚.______.-—◈◆■■■◆◈—-.______.♚_
-███■__☣●• PROTECT •●☣__■███
-____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
-""""""-■_______Lips_BOT________■-""""""
-
+╔══════════════════════
+║  ✟ P.R.O.T.E.C.T ✟   
 ╔══════════════════════
 ╠ ♚ Easy mode
 ╠ ♚ Hard mode
@@ -226,11 +212,8 @@ ____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
 ╚══════════════════════
 """
 banmode = """
-_☯.______.-—◈◆■■■◆◈—-.______.☯_
-███■__☣●•°BAN SET°•●☣__■███
-____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
-""""""-■_______Lips_BOT________■-""""""
-
+╔══════════════════════
+║   ✟ BAN SETTING ✟   
 ╔══════════════════════
 ╠ 🏴 Bancontact on/off
 ╠ 🏴 Bangambar on/off
@@ -245,11 +228,8 @@ ____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
 """
 
 pesen = """
-_☯.______.-—◈◆■■■◆◈—-.______.☯_
-███■__☣●• ° PESAN ° •●☣__■███
-____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
-""""""-■_______Lips_BOT________■-""""""
-
+╔══════════════════════
+║  ✟ PESAN SETTING ✟   
 ╔══════════════════════
 ╠ ✍͡ Pesanqr set:
 ╠ ⇨ Pesanqr
@@ -274,17 +254,15 @@ ____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
 """
 
 antimode = """
-_☯.______.-—◈◆■■■◆◈—-._____.☯_
-███■__☣●•°ANTI SET°•●☣__■███
-____.-◇●•--~/_ D3BL3NK_\~--•●◇-.____
-""""""-■_______Lips_BOT________■-""""""
 ╔══════════════════════
-╠􀜁􀇔 􀜁􀇔★ Anticontact
+║  ✟ ANTI SETTING ✟   
+╔══════════════════════
+╠ ★ Anticontact
 ╠ ★ Antigambar on/off
-╠ 􀜁􀜁★ Antivideo on/off
-╠ 􀜁􀜁􀇔★ Antiaudio on/off
-╠ 􀜁􀜁★ Antisticker on/off
-╠ 􀜁􀜁★ Antilink on/off
+╠ ★ Antivideo on/off
+╠ ★ Antiaudio on/off
+╠ ★ Antisticker on/off
+╠ ★ Antilink on/off
 ╠══════════════════════
 ║____ [Creator By Lips D3BL3NK] ____
 ║███■__ T⃟E⃟A⃟M⃟ ᴄᴀᴄᴀᴅ ᴮᴼᵀˢ __■███
@@ -300,20 +278,20 @@ mid5 = c5.getProfile().mid
 mid6 = c6.getProfile().mid
 
 Bots = [mid,mid2,mid3,mid4,mid5,mid6]
-admin = ["u65a2cdebe48158862c228fbfdc6d8c9d"]
-owner = "u65a2cdebe48158862c228fbfdc6d8c9d"
-staff = [admin,"u65a2cdebe48158862c228fbfdc6d8c9d"]
+admin = ["ube187443474747c3ec352e7efeb48c1b"]
+owner = "ube187443474747c3ec352e7efeb48c1b"
+staff = [admin,"ube187443474747c3ec352e7efeb48c1b"]
 team = [mid,mid2,mid3,mid4,mid5,mid6,admin,staff]
 blenk = random.choice(KAC)
 
 wait = {
     'contact':True,
     'autoJoin':True,
-    'autoCancel':{"on":False,"members":50},
+    'autoCancel':{"on":False,"members":1},
     'leaveRoom':True,
     'timeline':False,
-    'autoAdd':True,
-    'message':"T⃟E⃟A⃟M⃟ ᴄᴀᴄᴀᴅ ᴮᴼᵀˢ  \n\nCreator : line://ti/p/~alipbot_",
+    'autoAdd':False,
+    'message':"Cie Udah Add, Salken Ya  \n\nChat Aja Engga Ganggu Ko",
     "lang":"JP",
     "comment":"Auto Like By T⃟E⃟A⃟M⃟ ᴄᴀᴄᴀᴅ ᴮᴼᵀˢ \n\nCreator : line://ti/p/~alipbot_\n\n Thanks for :\n☯️F̸r̸o̸n̸S̸ (Admin TCT yang orangnya rada rada sange tapi terbaiklah :v)\nhttp://line.me/ti/p/%40gtx1225l\n☯️Opan & Ananthaabdllah (admin/owner flow inspectbot yang kaga pelit ilmu ashoyy :v)\nhttp://line.me/ti/p/%40caj6350s\n☯️Mr.KyuZ∅ (admin/owner Garuda Gray Mask)\n☯️Djodi & Geri (Yang selalu sepaket :v)\nReno & Aked (Bocah yg rada rada bangsat :v)\n☯️dan all theacer serta member yg lainnya yg saya tidak sebutkan satu persatu namun tidak mengurangi sedikitpun kehormatan saya...\n\nThanks For All Teacher And All Member 😘😘",
     "commentOn":False,
@@ -1784,7 +1762,7 @@ def bot(op):
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
-                    cl.sendText(msg.to,helpMessage)
+                    cl.sendText(msg.to,helpMessage) #ada
             elif msg.text in ["Bot/help","bot/help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,bot)
@@ -1794,22 +1772,22 @@ def bot(op):
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,plotek)
                 else:
-                    cl.sendText(msg.to,plotek)
+                    cl.sendText(msg.to,plotek) #ada
             elif msg.text in ["Ban/help","ban/help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,banmode)
                 else:
-                    cl.sendText(msg.to,banmode)
+                    cl.sendText(msg.to,banmode) #ada
             elif msg.text in ["Anti/help","anti/help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,antimode)
                 else:
-                    cl.sendText(msg.to,antimode)
+                    cl.sendText(msg.to,antimode) #ada
             elif msg.text in ["Pesan/help","pesan/help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,pesen)
                 else:
-                    cl.sendText(msg.to,pesen)
+                    cl.sendText(msg.to,pesen) #ada
 #-----------------------------------------------[ Mix Command ] 
 #Hapus Pesan Biar Gak Loadchat
             elif msg.text == "2Remove/pesan":
