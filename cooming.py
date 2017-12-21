@@ -304,6 +304,7 @@ wait = {
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
+    }
 
 protect = {
     "protect":False,
