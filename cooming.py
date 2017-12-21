@@ -1,36 +1,41 @@
-# -*- coding: utf-8 -*-
-#This is BOT Lips D3BL3NK
 
-import Lips
-from Lips.lib.curve.ttypes import *
+# -*- coding: utf-8 -*-
+
+import Aan
+from Aan.lib.curve.ttypes import *
 from datetime import datetime
 from bs4 import BeautifulSoup
-from threading import Thread
-from pyowm import OWM
-import time,random,sys,json,codecs,threading,glob,re,datetime,subprocess,urllib3,os,requests,urllib,goslate,pyowm
-import time, random, sys, re, os, json, subprocess, threading, string, codecs, requests, ctypes, urllib, urllib2, urllib3, wikipedia
+import time, random, sys, re, os, json, subprocess, threading, glob, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
+import requests
+from gtts import gTTS
+import goslate
+from urllib import urlopen
+import urllib2
+import urllib3
+import tempfile
+import html5lib
 
-cl = Lips.LINE()
-cl.login(token="TOKEN")
+cl = Aan.LINE()
+cl.login(token="EoSlrq9d3zpMpkzFCxTb.VHH0q0Dhr8pSns5/+RsmgW.zx7C2I7cFTYeV30zT8LBfTuMe9TgpkBPxl9JKYZDt4o=")
 cl.loginResult()
 
-c2 = Lips.LINE()
+c2 = Aan.LINE()
 c2.login(token="TOKEN")
 c2.loginResult()
 
-c3 = Lips.LINE()
+c3 = Aan.LINE()
 c3.login(token="TOKEN")
 c3.loginResult()
 
-c4 = Lips.LINE()
+c4 = Aan.LINE()
 c4.login(token="TOKEN")
 c4.loginResult()
 
-c5 = Lips.LINE()
+c5 = Aan.LINE()
 c5.login(token="TOKEN")
 c5.loginResult()
 
-c6 = Lips.LINE()
+c6 = Aan.LINE()
 c6.login(token="TOKEN")
 c6.loginResult()
 
