@@ -1,12 +1,12 @@
 
 # -*- coding: utf-8 -*-
 
-import LINETCR
-from LINETCR.lib.curve.ttypes import *
+import Aan
+from Aan.lib.curve.ttypes import *
 from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
-cl = LINETCR.LINE()
+cl = Aan.LINE()
 cl.login(qr=True)
 cl.loginResult()
 
